@@ -11,6 +11,12 @@
 		42C1848720E2FC2D0024B2F5 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 42C1848520E2FC2D0024B2F5 /* Main.storyboard */; };
 		42C1848920E2FC2E0024B2F5 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 42C1848820E2FC2E0024B2F5 /* Assets.xcassets */; };
 		42C1848C20E2FC2E0024B2F5 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 42C1848A20E2FC2E0024B2F5 /* LaunchScreen.storyboard */; };
+		42C1849820E305DD0024B2F5 /* MenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42C1849720E305DD0024B2F5 /* MenuViewController.swift */; };
+		42C1849B20E30AC00024B2F5 /* MenuViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42C1849A20E30AC00024B2F5 /* MenuViewModel.swift */; };
+		42C1849D20E35EA90024B2F5 /* Feed.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42C1849C20E35EA90024B2F5 /* Feed.swift */; };
+		42C184A120E369420024B2F5 /* MenuCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42C184A020E369420024B2F5 /* MenuCollectionViewCell.swift */; };
+		42C184A420E387150024B2F5 /* FeedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42C184A320E387150024B2F5 /* FeedViewController.swift */; };
+		42C184A620E389150024B2F5 /* FeedTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42C184A520E389150024B2F5 /* FeedTableViewCell.swift */; };
 		886A088E3B6AA74F8C5ECF80 /* Pods_Vltramarine.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 79048D12DFAC846E49658D39 /* Pods_Vltramarine.framework */; };
 /* End PBXBuildFile section */
 
@@ -23,6 +29,12 @@
 		42C1848820E2FC2E0024B2F5 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		42C1848B20E2FC2E0024B2F5 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		42C1848D20E2FC2E0024B2F5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		42C1849720E305DD0024B2F5 /* MenuViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuViewController.swift; sourceTree = "<group>"; };
+		42C1849A20E30AC00024B2F5 /* MenuViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuViewModel.swift; sourceTree = "<group>"; };
+		42C1849C20E35EA90024B2F5 /* Feed.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Feed.swift; sourceTree = "<group>"; };
+		42C184A020E369420024B2F5 /* MenuCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuCollectionViewCell.swift; sourceTree = "<group>"; };
+		42C184A320E387150024B2F5 /* FeedViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedViewController.swift; sourceTree = "<group>"; };
+		42C184A520E389150024B2F5 /* FeedTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedTableViewCell.swift; sourceTree = "<group>"; };
 		79048D12DFAC846E49658D39 /* Pods_Vltramarine.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Vltramarine.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -64,6 +76,7 @@
 				42C1848A20E2FC2E0024B2F5 /* LaunchScreen.storyboard */,
 				42C1849320E2FC9F0024B2F5 /* Assembly */,
 				42C1849420E2FCB70024B2F5 /* View */,
+				42C1849920E30A990024B2F5 /* ViewModel */,
 				42C1849620E2FCFF0024B2F5 /* DAO */,
 				42C1849520E2FCF60024B2F5 /* Model */,
 				42C1848D20E2FC2E0024B2F5 /* Info.plist */,
@@ -82,6 +95,9 @@
 		42C1849420E2FCB70024B2F5 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				42C184A220E386EE0024B2F5 /* Menu */,
+				42C184A320E387150024B2F5 /* FeedViewController.swift */,
+				42C184A520E389150024B2F5 /* FeedTableViewCell.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -89,6 +105,7 @@
 		42C1849520E2FCF60024B2F5 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				42C1849C20E35EA90024B2F5 /* Feed.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -98,6 +115,23 @@
 			children = (
 			);
 			path = DAO;
+			sourceTree = "<group>";
+		};
+		42C1849920E30A990024B2F5 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				42C1849A20E30AC00024B2F5 /* MenuViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		42C184A220E386EE0024B2F5 /* Menu */ = {
+			isa = PBXGroup;
+			children = (
+				42C1849720E305DD0024B2F5 /* MenuViewController.swift */,
+				42C184A020E369420024B2F5 /* MenuCollectionViewCell.swift */,
+			);
+			path = Menu;
 			sourceTree = "<group>";
 		};
 		6239AFB268C998393CCC835D /* Pods */ = {
@@ -229,7 +263,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				42C1849B20E30AC00024B2F5 /* MenuViewModel.swift in Sources */,
+				42C1849D20E35EA90024B2F5 /* Feed.swift in Sources */,
+				42C184A620E389150024B2F5 /* FeedTableViewCell.swift in Sources */,
 				42C1848220E2FC2D0024B2F5 /* AppDelegate.swift in Sources */,
+				42C1849820E305DD0024B2F5 /* MenuViewController.swift in Sources */,
+				42C184A420E387150024B2F5 /* FeedViewController.swift in Sources */,
+				42C184A120E369420024B2F5 /* MenuCollectionViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -377,7 +417,10 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = HYC2DXWEX7;
 				INFOPLIST_FILE = Vltramarine/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.ryabchikova.Vltramarine;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
@@ -393,7 +436,10 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = HYC2DXWEX7;
 				INFOPLIST_FILE = Vltramarine/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.ryabchikova.Vltramarine;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
