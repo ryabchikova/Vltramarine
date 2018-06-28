@@ -8,11 +8,38 @@
 
 import Foundation
 
-enum Feed: String {
-    case art = "http://www.vltramarine.ru/feed/photos/3"
-    case design = "http://www.vltramarine.ru/feed/photos/4"
-    case graffiti = "http://www.vltramarine.ru/feed/photos/1"
-    case streetart = "http://www.vltramarine.ru/feed/photos/2"
-    case urban = "http://www.vltramarine.ru/feed/photos/5"
-    case favorites = ""
+enum FeedTheme {
+    
+    case art
+    case design
+    case graffiti
+    case streetart
+    case urban
+    case favorites
 }
+
+class Feed: NSObject {
+    let theme: FeedTheme
+    let url: String
+    
+    init(feedTheme: FeedTheme) {
+        self.theme = feedTheme
+        
+        switch feedTheme {
+        case .art:
+            self.url = "http://www.vltramarine.ru/feed/photos/3"
+        case .design:
+            self.url = "http://www.vltramarine.ru/feed/photos/4"
+        case .graffiti:
+            self.url = "http://www.vltramarine.ru/feed/photos/1"
+        case .streetart:
+            self.url = "http://www.vltramarine.ru/feed/photos/2"
+        case .urban:
+            self.url = "http://www.vltramarine.ru/feed/photos/5"
+        case .favorites:
+            self.url = ""
+        }
+    }
+}
+
+

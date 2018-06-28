@@ -46,6 +46,16 @@ class MenuViewController : UICollectionViewController, UICollectionViewDelegateF
     }
     
     override func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        
+        let service = PhotoServiceImpl()
+        _ = service.getPhotosFrom(feed: Feed(feedTheme: .art)).done { result in
+            if let photos = result as? [Photo] {
+                print(photos.count)
+                print(photos[0].publicationDate)
+                print(photos[0].url)
+            }
+        }
+        
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
         let feedViewController = storyboard.instantiateViewController(withIdentifier: "FeedViewController")
         self.navigationController?.pushViewController(feedViewController, animated: true)

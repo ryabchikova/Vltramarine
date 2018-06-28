@@ -1,4 +1,16 @@
 PODS:
+  - PromiseKit (6.2.3):
+    - PromiseKit/CorePromise (= 6.2.3)
+    - PromiseKit/Foundation (= 6.2.3)
+    - PromiseKit/UIKit (= 6.2.3)
+  - PromiseKit/CorePromise (6.2.3)
+  - PromiseKit/Foundation (6.2.3):
+    - PromiseKit/CorePromise
+  - PromiseKit/UIKit (6.2.3):
+    - PromiseKit/CorePromise
+  - SDWebImage (4.3.3):
+    - SDWebImage/Core (= 4.3.3)
+  - SDWebImage/Core (4.3.3)
   - Typhoon (4.0.4):
     - Typhoon/DeallocNotifier (= 4.0.4)
     - Typhoon/IntrospectionUtils (= 4.0.4)
@@ -9,15 +21,21 @@ PODS:
     - Typhoon/IntrospectionUtils
 
 DEPENDENCIES:
+  - PromiseKit
+  - SDWebImage
   - Typhoon
 
 SPEC REPOS:
   https://github.com/cocoapods/specs.git:
+    - PromiseKit
+    - SDWebImage
     - Typhoon
 
 SPEC CHECKSUMS:
+  PromiseKit: 62f37bb4900a9b0b7550d017e41497171d93face
+  SDWebImage: de4d90b5bff3571eae7bd16202b1f43135409fa5
   Typhoon: fe0fa417515e279f68170cfe3ae9c1d5eae53205
 
-PODFILE CHECKSUM: 471ff4a2b3e0772189d1b65b4050499e421f2d27
+PODFILE CHECKSUM: 063db02fa456182b3913755cc79d1bad0fdea5bb
 
 COCOAPODS: 1.5.3

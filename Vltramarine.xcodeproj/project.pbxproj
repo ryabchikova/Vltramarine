@@ -17,6 +17,11 @@
 		42C184A120E369420024B2F5 /* MenuCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42C184A020E369420024B2F5 /* MenuCollectionViewCell.swift */; };
 		42C184A420E387150024B2F5 /* FeedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42C184A320E387150024B2F5 /* FeedViewController.swift */; };
 		42C184A620E389150024B2F5 /* FeedTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42C184A520E389150024B2F5 /* FeedTableViewCell.swift */; };
+		42C184A920E39FB30024B2F5 /* Photo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42C184A820E39FB30024B2F5 /* Photo.swift */; };
+		42C184AB20E3A9680024B2F5 /* PhotoService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42C184AA20E3A9680024B2F5 /* PhotoService.swift */; };
+		42C184AD20E3AE9A0024B2F5 /* PhotoServiceImpl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42C184AC20E3AE9A0024B2F5 /* PhotoServiceImpl.swift */; };
+		42C184AF20E419E40024B2F5 /* FeedXmlParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42C184AE20E419E40024B2F5 /* FeedXmlParser.swift */; };
+		42C184B120E4E1D10024B2F5 /* FeedViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42C184B020E4E1D10024B2F5 /* FeedViewModel.swift */; };
 		886A088E3B6AA74F8C5ECF80 /* Pods_Vltramarine.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 79048D12DFAC846E49658D39 /* Pods_Vltramarine.framework */; };
 /* End PBXBuildFile section */
 
@@ -35,6 +40,11 @@
 		42C184A020E369420024B2F5 /* MenuCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuCollectionViewCell.swift; sourceTree = "<group>"; };
 		42C184A320E387150024B2F5 /* FeedViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedViewController.swift; sourceTree = "<group>"; };
 		42C184A520E389150024B2F5 /* FeedTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedTableViewCell.swift; sourceTree = "<group>"; };
+		42C184A820E39FB30024B2F5 /* Photo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Photo.swift; sourceTree = "<group>"; };
+		42C184AA20E3A9680024B2F5 /* PhotoService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoService.swift; sourceTree = "<group>"; };
+		42C184AC20E3AE9A0024B2F5 /* PhotoServiceImpl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoServiceImpl.swift; sourceTree = "<group>"; };
+		42C184AE20E419E40024B2F5 /* FeedXmlParser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FeedXmlParser.swift; sourceTree = "<group>"; };
+		42C184B020E4E1D10024B2F5 /* FeedViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedViewModel.swift; sourceTree = "<group>"; };
 		79048D12DFAC846E49658D39 /* Pods_Vltramarine.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Vltramarine.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -96,8 +106,7 @@
 			isa = PBXGroup;
 			children = (
 				42C184A220E386EE0024B2F5 /* Menu */,
-				42C184A320E387150024B2F5 /* FeedViewController.swift */,
-				42C184A520E389150024B2F5 /* FeedTableViewCell.swift */,
+				42C184A720E398D00024B2F5 /* Feed */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -106,6 +115,7 @@
 			isa = PBXGroup;
 			children = (
 				42C1849C20E35EA90024B2F5 /* Feed.swift */,
+				42C184A820E39FB30024B2F5 /* Photo.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -113,6 +123,9 @@
 		42C1849620E2FCFF0024B2F5 /* DAO */ = {
 			isa = PBXGroup;
 			children = (
+				42C184AE20E419E40024B2F5 /* FeedXmlParser.swift */,
+				42C184AA20E3A9680024B2F5 /* PhotoService.swift */,
+				42C184AC20E3AE9A0024B2F5 /* PhotoServiceImpl.swift */,
 			);
 			path = DAO;
 			sourceTree = "<group>";
@@ -121,6 +134,7 @@
 			isa = PBXGroup;
 			children = (
 				42C1849A20E30AC00024B2F5 /* MenuViewModel.swift */,
+				42C184B020E4E1D10024B2F5 /* FeedViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -132,6 +146,15 @@
 				42C184A020E369420024B2F5 /* MenuCollectionViewCell.swift */,
 			);
 			path = Menu;
+			sourceTree = "<group>";
+		};
+		42C184A720E398D00024B2F5 /* Feed */ = {
+			isa = PBXGroup;
+			children = (
+				42C184A320E387150024B2F5 /* FeedViewController.swift */,
+				42C184A520E389150024B2F5 /* FeedTableViewCell.swift */,
+			);
+			path = Feed;
 			sourceTree = "<group>";
 		};
 		6239AFB268C998393CCC835D /* Pods */ = {
@@ -245,10 +268,14 @@
 			);
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-Vltramarine/Pods-Vltramarine-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/PromiseKit/PromiseKit.framework",
+				"${BUILT_PRODUCTS_DIR}/SDWebImage/SDWebImage.framework",
 				"${BUILT_PRODUCTS_DIR}/Typhoon/Typhoon.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/PromiseKit.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SDWebImage.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Typhoon.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -263,10 +290,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				42C184AD20E3AE9A0024B2F5 /* PhotoServiceImpl.swift in Sources */,
+				42C184AF20E419E40024B2F5 /* FeedXmlParser.swift in Sources */,
+				42C184B120E4E1D10024B2F5 /* FeedViewModel.swift in Sources */,
 				42C1849B20E30AC00024B2F5 /* MenuViewModel.swift in Sources */,
+				42C184AB20E3A9680024B2F5 /* PhotoService.swift in Sources */,
 				42C1849D20E35EA90024B2F5 /* Feed.swift in Sources */,
 				42C184A620E389150024B2F5 /* FeedTableViewCell.swift in Sources */,
 				42C1848220E2FC2D0024B2F5 /* AppDelegate.swift in Sources */,
+				42C184A920E39FB30024B2F5 /* Photo.swift in Sources */,
 				42C1849820E305DD0024B2F5 /* MenuViewController.swift in Sources */,
 				42C184A420E387150024B2F5 /* FeedViewController.swift in Sources */,
 				42C184A120E369420024B2F5 /* MenuCollectionViewCell.swift in Sources */,
@@ -417,10 +449,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = HYC2DXWEX7;
 				INFOPLIST_FILE = Vltramarine/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-				);
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.ryabchikova.Vltramarine;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
@@ -436,10 +465,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = HYC2DXWEX7;
 				INFOPLIST_FILE = Vltramarine/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-				);
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.ryabchikova.Vltramarine;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;

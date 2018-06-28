@@ -9,7 +9,7 @@
 import Foundation
 
 struct MenuItem {
-    let feed: Feed
+    let feedTheme: FeedTheme
     let title: String
 }
 
@@ -17,12 +17,12 @@ class MenuViewModel {
     let items: [MenuItem]
     
     init() {
-        items = [MenuItem(feed: .art, title: "Art"),
-                 MenuItem(feed: .design, title: "Design"),
-                 MenuItem(feed: .graffiti, title: "Graffiti"),
-                 MenuItem(feed: .streetart, title: "Street art"),
-                 MenuItem(feed: .urban, title: "Urban culture"),
-                 MenuItem(feed: .favorites, title: "Favorites"),
+        items = [MenuItem(feedTheme: .art, title: "Art"),
+                 MenuItem(feedTheme: .design, title: "Design"),
+                 MenuItem(feedTheme: .graffiti, title: "Graffiti"),
+                 MenuItem(feedTheme: .streetart, title: "Street art"),
+                 MenuItem(feedTheme: .urban, title: "Urban culture"),
+                 MenuItem(feedTheme: .favorites, title: "Favorites"),
         ];
     }
 }
