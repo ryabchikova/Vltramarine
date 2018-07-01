@@ -9,7 +9,7 @@
 import Foundation
 import PromiseKit
 
-@objc protocol PhotoService {
+protocol PhotoService {
     
-    func getPhotosFrom(feed: Feed) -> AnyPromise
+    func getAllPhotosFrom(feed: Feed) -> Promise<[Photo]>
 }

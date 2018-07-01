@@ -11,5 +11,6 @@ import UIKit
 
 class FeedTableViewCell : UITableViewCell {
     
-    @IBOutlet var tmpLabel: UILabel!
+    @IBOutlet var feedImage: UIImageView!
+    @IBOutlet var pubDateLabel: UILabel!
 }

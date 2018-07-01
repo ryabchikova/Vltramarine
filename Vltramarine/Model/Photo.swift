@@ -7,25 +7,20 @@
 //
 
 import Foundation
+import UIKit
 
 class Photo: NSObject {
-    let url: String
+    let url: URL
     let publicationDate: Date
     
     init?(url: String, publicationDate: String) {
-        guard !url.isEmpty else {return nil}
-        self.url = url
+        
+        guard let photoUrl = URL(string: url) else{ return nil }
+        self.url = photoUrl
         
         let formatter = DateFormatter()
-                                
         formatter.dateFormat = "EEE, dd MMM yyyy HH:mm:ss +zzzz"
-        // TODO доделать формат
-        //guard let pubDate = formatter.date(from: publicationDate) else {return nil}
-        
-        if let pubDate = formatter.date(from: publicationDate) {
-            self.publicationDate = pubDate
-        } else {
-            self.publicationDate = Date()
-        }
+        guard let pubDate = formatter.date(from: publicationDate) else { return nil }
+        self.publicationDate = pubDate
     }
 }

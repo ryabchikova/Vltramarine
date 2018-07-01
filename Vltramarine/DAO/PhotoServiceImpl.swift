@@ -8,32 +8,17 @@
 
 import Foundation
 import PromiseKit
-import SWXMLHash
 
-class PhotoServiceImpl: NSObject, PhotoService {
+class PhotoServiceImpl: PhotoService {
     
-    func getPhotosFrom(feed: Feed) -> AnyPromise {
-        
-        let promise = Promise<[Photo]?> { seal in
+    func getAllPhotosFrom(feed: Feed) -> Promise<[Photo]> {
+        return Promise { seal in
             DispatchQueue.global(qos: .userInitiated).async {
-                seal.fulfill(FeedXMLParser().getAllPhotosFrom(feedUrl: feed.url))
+                seal.fulfill(FeedXMLParser().getAllPhotosFrom(feedUrl: feed.url).compactMap { item -> Photo? in
+                    return Photo(url: item.url, publicationDate: item.pubDate)
+                })
             }
         }
-            
-        return AnyPromise(promise)
-    
-        /*
-        guard let feedUrl = URL(string: feed.url) else { return }
-
-        firstly {
-            URLSession.shared.dataTask(.promise, with: URLRequest(url: feedUrl))
-        }.compactMap(on: DispatchQueue.global(qos: .userInteractive)) { data, _ in
-            let xml = SWXMLHash.parse(data)
-            let descriptions = xml["channel"]["item"]["description"].all.map{ elem in
-                elem.element!.text
-            }
-        }
- */
-   
     }
+    
 }

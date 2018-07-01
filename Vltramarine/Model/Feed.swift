@@ -18,7 +18,9 @@ enum FeedTheme {
     case favorites
 }
 
+// TODO feed's url place to constants or some config
 class Feed: NSObject {
+    
     let theme: FeedTheme
     let url: String
     

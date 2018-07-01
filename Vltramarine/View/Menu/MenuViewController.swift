@@ -11,17 +11,7 @@ import UIKit
 
 class MenuViewController : UICollectionViewController, UICollectionViewDelegateFlowLayout {
     
-    private var viewModel: MenuViewModel
-    
-//    init(viewModel: MenuViewModel) {
-//        self.viewModel = viewModel
-//        super.init(nibName: nil, bundle: nil)
-//    }
-    
-    public required init?(coder aDecoder: NSCoder) {
-        self.viewModel = MenuViewModel()
-        super.init(coder: aDecoder)
-    }
+    private var viewModel = MenuViewModel()
     
     // MARK: UICollectionViewDataSource
     
@@ -46,18 +36,11 @@ class MenuViewController : UICollectionViewController, UICollectionViewDelegateF
     }
     
     override func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        
-        let service = PhotoServiceImpl()
-        _ = service.getPhotosFrom(feed: Feed(feedTheme: .art)).done { result in
-            if let photos = result as? [Photo] {
-                print(photos.count)
-                print(photos[0].publicationDate)
-                print(photos[0].url)
-            }
-        }
-        
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
-        let feedViewController = storyboard.instantiateViewController(withIdentifier: "FeedViewController")
+        let feedViewController = storyboard.instantiateViewController(withIdentifier: "FeedViewController") as! FeedViewController
+        // TODO PhotoServiceImpl() bad bad bad
+        feedViewController.feed = Feed(feedTheme: self.viewModel.items[indexPath.row].feedTheme)
+        feedViewController.photoService = PhotoServiceImpl()
         self.navigationController?.pushViewController(feedViewController, animated: true)
     }
     

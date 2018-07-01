@@ -10,7 +10,7 @@ import Foundation
 
 class FeedXMLParser: NSObject, XMLParserDelegate {
     
-    var photosArray = [Photo]()
+    var photosArray = [(url: String, pubDate: String)]()
     
     var currentElementName = ""
     var currentElementText = ""
@@ -18,15 +18,13 @@ class FeedXMLParser: NSObject, XMLParserDelegate {
     var curentPhotoUrl = ""
     var curentPubDate = ""
 
-    func getAllPhotosFrom(feedUrl: String) -> [Photo]? {
-        guard let url = URL(string: feedUrl) else { return nil }
-        guard let xmlParser = XMLParser(contentsOf: url) else { return nil }
+    func getAllPhotosFrom(feedUrl: String) -> [(url: String, pubDate: String)] {
+        guard let url = URL(string: feedUrl) else { return [] }
+        guard let xmlParser = XMLParser(contentsOf: url) else { return [] }
         xmlParser.delegate = self
         
         self.photosArray = []
-        
-        let sucess = xmlParser.parse()
-        return sucess ? self.photosArray : nil
+        return xmlParser.parse() ? self.photosArray : []
     }
     
     // MARK: XMLParserDelegate
@@ -64,9 +62,7 @@ class FeedXMLParser: NSObject, XMLParserDelegate {
         }
         
         if elementName == "item" {
-            if let photo = Photo(url: self.curentPhotoUrl, publicationDate: self.curentPubDate) {
-                self.photosArray.append(photo)
-            }
+            self.photosArray.append((url: self.curentPhotoUrl, pubDate: self.curentPubDate))
         }
     }
 }
