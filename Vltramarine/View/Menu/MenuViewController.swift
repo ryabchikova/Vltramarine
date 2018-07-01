@@ -38,9 +38,13 @@ class MenuViewController : UICollectionViewController, UICollectionViewDelegateF
     override func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
         let feedViewController = storyboard.instantiateViewController(withIdentifier: "FeedViewController") as! FeedViewController
-        // TODO PhotoServiceImpl() bad bad bad
+        
+        // TODO bad bad bad !!!!
         feedViewController.feed = Feed(feedTheme: self.viewModel.items[indexPath.row].feedTheme)
-        feedViewController.photoService = PhotoServiceImpl()
+        let photoService = PhotoServiceImpl()
+        photoService.repository = PhotoRepositorySQLiteImpl()
+        feedViewController.photoService = photoService
+        
         self.navigationController?.pushViewController(feedViewController, animated: true)
     }
     

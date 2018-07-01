@@ -7,5 +7,6 @@ target 'Vltramarine' do
   pod 'Typhoon'  
   pod 'PromiseKit'
   pod 'SDWebImage'
+  pod 'FMDB'
 
 end

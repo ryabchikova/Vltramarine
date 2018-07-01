@@ -8,9 +8,9 @@
 
 import Foundation
 
-enum FeedTheme {
+enum FeedTheme: Int {
     
-    case art
+    case art = 0
     case design
     case graffiti
     case streetart

@@ -45,12 +45,27 @@ class FeedViewController : UIViewController, UITableViewDataSource, UITableViewD
     }
     
     private func fetchData() {
-        _ = self.photoService.getAllPhotosFrom(feed: feed).map { photos in
+        
+//        _ = self.photoService.getAllPhotosFrom(feed: feed).map { photos in
+//            return photos.map { photo in
+//                return FeedItem(url: photo.url, pubDate: photo.publicationDate.description, isFavorite: false)
+//            }
+//        }.done { feedItems in
+//            self.items = feedItems
+//        }
+        
+        // 2nd variant
+        firstly {
+            self.photoService.getAllPhotosFrom(feed: feed)
+        }.map { photos in
             return photos.map { photo in
                 return FeedItem(url: photo.url, pubDate: photo.publicationDate.description, isFavorite: false)
             }
         }.done { feedItems in
             self.items = feedItems
+        }.catch { error in
+            NSLog(error.localizedDescription)
+            // TODO show error page
         }
     }
     
@@ -72,6 +87,8 @@ class FeedViewController : UIViewController, UITableViewDataSource, UITableViewD
     
     func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
         let cell = cell as! FeedTableViewCell
+        // TODO activity indicator
+        
         cell.feedImage.sd_setImage(with: self.items[indexPath.row].url, placeholderImage: UIImage(named: "default_image"))
         cell.pubDateLabel.text = self.items[indexPath.row].pubDate
     }
