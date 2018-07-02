@@ -11,7 +11,7 @@ import PromiseKit
 
 protocol PhotoRepository {
     
-    func savePhotosFor(feedTheme: FeedTheme, photos: [Photo]) -> Promise<Bool>
+    func savePhotosFor(feedTheme: FeedTheme, photos: [Photo]) -> Promise<Void>
     
     func getPhotosFor(feedTheme: FeedTheme) -> Promise<[Photo]>
     

@@ -19,9 +19,10 @@ class PhotoRepositorySQLiteImpl: PhotoRepository {
         self.queue.inDatabase { db in
             let query = """
                 CREATE TABLE IF NOT EXISTS Photo (
-                    url TEXT PRIMARY KEY,
+                    identifier INTEGER PRIMARY KEY,
+                    url TEXT,
+                    publicationDate INTEGER,
                     feedTheme INTEGER,
-                    pubDate TEXT,
                     isFavorite INTEGER DEFAULT 0);
             """
             if !db.executeUpdate(query, withArgumentsIn: []) {
@@ -37,20 +38,20 @@ class PhotoRepositorySQLiteImpl: PhotoRepository {
     
     // MARK: Data processing
     
-    func savePhotosFor(feedTheme: FeedTheme, photos: [Photo]) -> Promise<Bool> {
+    func savePhotosFor(feedTheme: FeedTheme, photos: [Photo]) -> Promise<Void> {
         return Promise { seal in
             DispatchQueue.global(qos: .userInitiated).async {
                 var transactionFailed = false
                 self.queue.inTransaction { db, rollback in
                     for item in photos {
                         let paramsDictionary: [AnyHashable: Any] = [
-                            //"identifier": self.hashOf(value: item.url.absoluteString),
+                            "identifier": item.identifier,
                             "url": item.url.absoluteString,
-                            "feedTheme": feedTheme.rawValue,
-                            "pubDate": item.publicationDate
+                            "publicationDate": item.publicationDate.timeIntervalSince1970,
+                            "feedTheme": feedTheme.rawValue
                         ]
                         
-                        let success = db.executeUpdate("INSERT OR REPLACE INTO Photo (url, feedTheme, pubDate) VALUES (:url, :feedTheme, :pubDate);", withParameterDictionary: paramsDictionary)
+                        let success = db.executeUpdate("INSERT OR IGNORE INTO Photo (identifier, url, publicationDate, feedTheme) VALUES (:identifier, :url, :publicationDate, :feedTheme);", withParameterDictionary: paramsDictionary)
                         
                         if !success {
                             transactionFailed = true
@@ -63,7 +64,7 @@ class PhotoRepositorySQLiteImpl: PhotoRepository {
                 if transactionFailed {
                     seal.reject(NSError(domain: kPhotoRepositoryErrorDomain, code: 0, userInfo: [NSLocalizedDescriptionKey: "Save photos in database failed"]))
                 } else {
-                    seal.fulfill(true)
+                    seal.fulfill(())
                 }
             }
         }
@@ -77,8 +78,10 @@ class PhotoRepositorySQLiteImpl: PhotoRepository {
                     if let resultSet = db.executeQuery("SELECT * FROM Photo WHERE feedTheme = ?", withArgumentsIn: [feedTheme.rawValue]) {
                         while resultSet.next() {
                             guard let url = resultSet.string(forColumn: "url") else { continue }
-                            guard let pubDate = resultSet.string(forColumn: "pubDate") else { continue }
-                            if let photo = Photo(url: url, publicationDate: pubDate, isFavorite: resultSet.bool(forColumn: "isFavorite")) {
+                            guard let pubDate = resultSet.date(forColumn: "publicationDate") else { continue }
+                            // TODO test for correct casting
+                            let isFavorite = resultSet.bool(forColumn: "isFavorite")
+                            if let photo = Photo(url: url, publicationDate: pubDate, isFavorite: isFavorite) {
                                 items.append(photo)
                             }
                         }
@@ -89,14 +92,6 @@ class PhotoRepositorySQLiteImpl: PhotoRepository {
             }
         }
     }
-    
-    // MARK: Helpers
-    // TODO
-    private func hashOf(value: String) -> Int {
-        return 0
-    }
-    
-    
 }
 
 

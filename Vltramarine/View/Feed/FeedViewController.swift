@@ -14,7 +14,7 @@ import SDWebImage
 fileprivate struct FeedItem {
     
     let url: URL
-    let pubDate: String
+    let publicationDate: String
     var isFavorite: Bool = false
 }
 
@@ -45,21 +45,12 @@ class FeedViewController : UIViewController, UITableViewDataSource, UITableViewD
     }
     
     private func fetchData() {
-        
-//        _ = self.photoService.getAllPhotosFrom(feed: feed).map { photos in
-//            return photos.map { photo in
-//                return FeedItem(url: photo.url, pubDate: photo.publicationDate.description, isFavorite: false)
-//            }
-//        }.done { feedItems in
-//            self.items = feedItems
-//        }
-        
-        // 2nd variant
+    
         firstly {
             self.photoService.getAllPhotosFrom(feed: feed)
-        }.map { photos in
+        }.map { photos -> [FeedItem] in
             return photos.map { photo in
-                return FeedItem(url: photo.url, pubDate: photo.publicationDate.description, isFavorite: false)
+                return FeedItem(url: photo.url, publicationDate: self.makeFormattedStringFrom(date: photo.publicationDate), isFavorite: photo.isFavorite)
             }
         }.done { feedItems in
             self.items = feedItems
@@ -87,9 +78,20 @@ class FeedViewController : UIViewController, UITableViewDataSource, UITableViewD
     
     func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
         let cell = cell as! FeedTableViewCell
-        // TODO activity indicator
         
+        cell.feedImage.sd_setShowActivityIndicatorView(true)
+        cell.feedImage.sd_setIndicatorStyle(.gray)
         cell.feedImage.sd_setImage(with: self.items[indexPath.row].url, placeholderImage: UIImage(named: "default_image"))
-        cell.pubDateLabel.text = self.items[indexPath.row].pubDate
+        
+        cell.pubDateLabel.text = self.items[indexPath.row].publicationDate
     }
+    
+    // Helpers
+    private func makeFormattedStringFrom(date: Date) -> String {
+        let formatter = DateFormatter()
+        formatter.timeZone = TimeZone(abbreviation: "UTC")
+        formatter.dateFormat = "dd MMM yyyy 'at' HH:mm:ss"
+        return formatter.string(from: date)
+    }
+    
 }

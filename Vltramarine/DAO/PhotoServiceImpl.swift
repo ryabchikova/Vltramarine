@@ -13,14 +13,14 @@ class PhotoServiceImpl: PhotoService {
     
     var repository: PhotoRepository!
     
-    
-    
-    // with persist version:
     func getAllPhotosFrom(feed: Feed) -> Promise<[Photo]> {
+
         return Promise { seal in
-            self.getPhotosFromRssFor(feed: feed).then { photos in
+            firstly {
+                self.getPhotosFromRssFor(feed: feed)
+            }.then { photos in
                 self.repository.savePhotosFor(feedTheme: feed.theme, photos: photos)
-            }.then { _ in
+            }.then {
                 self.repository.getPhotosFor(feedTheme: feed.theme)
             }.done { photos in
                 seal.fulfill(photos)
@@ -39,7 +39,5 @@ class PhotoServiceImpl: PhotoService {
             }
         }
     }
-    
-    
     
 }

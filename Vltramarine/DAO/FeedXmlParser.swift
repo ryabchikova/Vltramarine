@@ -10,15 +10,15 @@ import Foundation
 
 class FeedXMLParser: NSObject, XMLParserDelegate {
     
-    var photosArray = [(url: String, pubDate: String)]()
+    var photosArray = [(url: String, pubDate: Date)]()
     
     var currentElementName = ""
     var currentElementText = ""
     
     var curentPhotoUrl = ""
-    var curentPubDate = ""
+    var curentPubDate = Date()
 
-    func getAllPhotosFrom(feedUrl: String) -> [(url: String, pubDate: String)] {
+    func getAllPhotosFrom(feedUrl: String) -> [(url: String, pubDate: Date)] {
         guard let url = URL(string: feedUrl) else { return [] }
         guard let xmlParser = XMLParser(contentsOf: url) else { return [] }
         xmlParser.delegate = self
@@ -56,7 +56,14 @@ class FeedXMLParser: NSObject, XMLParserDelegate {
         }
         
         if elementName == "pubDate" {
-            self.curentPubDate = self.currentElementText
+            let formatter = DateFormatter()
+            formatter.dateFormat = "EEE, dd MMM yyyy HH:mm:ss +zzzz"
+            if let pubDate = formatter.date(from: self.currentElementText) {
+                self.curentPubDate = pubDate
+            } else {
+                self.curentPubDate = Date()
+            }
+            
             self.currentElementText = ""
             return
         }
