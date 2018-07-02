@@ -11,8 +11,10 @@ import UIKit
 import PromiseKit
 import SDWebImage
 
+// TODO перейти на использование Photo
 fileprivate struct FeedItem {
     
+    let identifier: Int
     let url: URL
     let publicationDate: String
     var isFavorite: Bool = false
@@ -22,12 +24,8 @@ class FeedViewController : UIViewController, UITableViewDataSource, UITableViewD
     
     var feed: Feed!
     var photoService: PhotoService!
-    
-    private var items = [FeedItem]() {
-        didSet {
-            self.tableView.reloadData()
-        }
-    }
+   
+    private var items = [FeedItem]()
     
     @IBOutlet var tableView: UITableView!
     
@@ -50,10 +48,11 @@ class FeedViewController : UIViewController, UITableViewDataSource, UITableViewD
             self.photoService.getAllPhotosFrom(feed: feed)
         }.map { photos -> [FeedItem] in
             return photos.map { photo in
-                return FeedItem(url: photo.url, publicationDate: self.makeFormattedStringFrom(date: photo.publicationDate), isFavorite: photo.isFavorite)
+                return FeedItem(identifier: photo.identifier, url: photo.url, publicationDate: self.makeFormattedStringFrom(date: photo.publicationDate), isFavorite: photo.isFavorite)
             }
         }.done { feedItems in
             self.items = feedItems
+            self.tableView.reloadData()
         }.catch { error in
             NSLog(error.localizedDescription)
             // TODO show error page
@@ -71,22 +70,20 @@ class FeedViewController : UIViewController, UITableViewDataSource, UITableViewD
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        return tableView.dequeueReusableCell(withIdentifier: "FeedCell", for: indexPath) as! FeedTableViewCell
-    }
-    
-    // MARK: UITableViewDelegate
-    
-    func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
-        let cell = cell as! FeedTableViewCell
+        let cell =  tableView.dequeueReusableCell(withIdentifier: "FeedCell", for: indexPath) as! FeedTableViewCell
+        cell.delegate = self
         
         cell.feedImage.sd_setShowActivityIndicatorView(true)
         cell.feedImage.sd_setIndicatorStyle(.gray)
         cell.feedImage.sd_setImage(with: self.items[indexPath.row].url, placeholderImage: UIImage(named: "default_image"))
         
         cell.pubDateLabel.text = self.items[indexPath.row].publicationDate
+        cell.isFavorite = self.items[indexPath.row].isFavorite
+        
+        return cell
     }
     
-    // Helpers
+    // MARK: Helpers
     private func makeFormattedStringFrom(date: Date) -> String {
         let formatter = DateFormatter()
         formatter.timeZone = TimeZone(abbreviation: "UTC")
@@ -94,4 +91,20 @@ class FeedViewController : UIViewController, UITableViewDataSource, UITableViewD
         return formatter.string(from: date)
     }
     
+}
+
+extension FeedViewController: FeedTableViewCellDelegate {
+    
+    func feedTableViewCellNeedChangeStateOn(newFavoriteState isFavorite: Bool, delegatedFrom cell: FeedTableViewCell) {
+        if let indexPath = self.tableView.indexPath(for: cell) {
+            firstly {
+                self.photoService.setFavoriteStateForPhotoWith(identifier: self.items[indexPath.row].identifier, isFavorite: isFavorite)
+            }.done { executedWithSuccess in
+                if executedWithSuccess {
+                    self.items[indexPath.row].isFavorite = isFavorite
+                    cell.isFavorite = isFavorite
+                }
+            }
+        }
+    }
 }

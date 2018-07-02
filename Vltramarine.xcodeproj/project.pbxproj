@@ -10,6 +10,7 @@
 		427A441F20E8D61700FFE7DF /* PhotoRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 427A441E20E8D61700FFE7DF /* PhotoRepository.swift */; };
 		427A442120E8D64500FFE7DF /* PhotoRepositorySQLiteImpl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 427A442020E8D64500FFE7DF /* PhotoRepositorySQLiteImpl.swift */; };
 		427A442520E94CCC00FFE7DF /* VltramarineError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 427A442420E94CCC00FFE7DF /* VltramarineError.swift */; };
+		42A807C020EA7184001D304A /* FeedTableViewCellDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42A807BF20EA7183001D304A /* FeedTableViewCellDelegate.swift */; };
 		42C1848220E2FC2D0024B2F5 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42C1848120E2FC2D0024B2F5 /* AppDelegate.swift */; };
 		42C1848720E2FC2D0024B2F5 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 42C1848520E2FC2D0024B2F5 /* Main.storyboard */; };
 		42C1848920E2FC2E0024B2F5 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 42C1848820E2FC2E0024B2F5 /* Assets.xcassets */; };
@@ -35,6 +36,7 @@
 		427A441E20E8D61700FFE7DF /* PhotoRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoRepository.swift; sourceTree = "<group>"; };
 		427A442020E8D64500FFE7DF /* PhotoRepositorySQLiteImpl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoRepositorySQLiteImpl.swift; sourceTree = "<group>"; };
 		427A442420E94CCC00FFE7DF /* VltramarineError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VltramarineError.swift; sourceTree = "<group>"; };
+		42A807BF20EA7183001D304A /* FeedTableViewCellDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedTableViewCellDelegate.swift; sourceTree = "<group>"; };
 		42C1847E20E2FC2D0024B2F5 /* Vltramarine.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Vltramarine.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		42C1848120E2FC2D0024B2F5 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		42C1848620E2FC2D0024B2F5 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -173,6 +175,7 @@
 			children = (
 				42C184A320E387150024B2F5 /* FeedViewController.swift */,
 				42C184A520E389150024B2F5 /* FeedTableViewCell.swift */,
+				42A807BF20EA7183001D304A /* FeedTableViewCellDelegate.swift */,
 			);
 			path = Feed;
 			sourceTree = "<group>";
@@ -323,6 +326,7 @@
 				42C184AB20E3A9680024B2F5 /* PhotoService.swift in Sources */,
 				42C1849D20E35EA90024B2F5 /* Feed.swift in Sources */,
 				42C184A620E389150024B2F5 /* FeedTableViewCell.swift in Sources */,
+				42A807C020EA7184001D304A /* FeedTableViewCellDelegate.swift in Sources */,
 				42C1848220E2FC2D0024B2F5 /* AppDelegate.swift in Sources */,
 				42C184A920E39FB30024B2F5 /* Photo.swift in Sources */,
 				42C1849820E305DD0024B2F5 /* MenuViewController.swift in Sources */,

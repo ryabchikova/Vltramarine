@@ -74,8 +74,17 @@ class PhotoRepositorySQLiteImpl: PhotoRepository {
         return Promise { seal in
             DispatchQueue.global(qos: .userInitiated).async {
                 var items = [Photo]()
+    
+                var query = ""
+                switch feedTheme {
+                case .favorites:
+                    query = "SELECT * FROM Photo WHERE isFavorite = 1;"
+                default:
+                    query = "SELECT * FROM Photo WHERE feedTheme = \(feedTheme.rawValue);"
+                }
+                
                 self.queue.inDatabase { db in
-                    if let resultSet = db.executeQuery("SELECT * FROM Photo WHERE feedTheme = ?", withArgumentsIn: [feedTheme.rawValue]) {
+                    if let resultSet = db.executeQuery(query, withArgumentsIn: []) {
                         while resultSet.next() {
                             guard let url = resultSet.string(forColumn: "url") else { continue }
                             guard let pubDate = resultSet.date(forColumn: "publicationDate") else { continue }
@@ -89,6 +98,17 @@ class PhotoRepositorySQLiteImpl: PhotoRepository {
                 }
                 
                 seal.fulfill(items)
+            }
+        }
+    }
+    
+    func setFavoriteStateForPhotoWith(identifier: Int, isFavorite: Bool) -> Guarantee<Bool> {
+        return Guarantee { seal in
+            DispatchQueue.global(qos: .userInitiated).async {
+                self.queue.inDatabase { db in
+                    seal(db.executeUpdate("UPDATE Photo SET isFavorite = ? WHERE identifier = ?",
+                                                  withArgumentsIn: [(isFavorite ? 1 : 0), identifier]))
+                }
             }
         }
     }

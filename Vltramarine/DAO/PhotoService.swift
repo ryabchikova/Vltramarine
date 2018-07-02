@@ -12,4 +12,6 @@ import PromiseKit
 protocol PhotoService {
     
     func getAllPhotosFrom(feed: Feed) -> Promise<[Photo]>
+    
+    func setFavoriteStateForPhotoWith(identifier: Int, isFavorite: Bool) -> Guarantee<Bool>
 }
