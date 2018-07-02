@@ -7,28 +7,17 @@
 //
 
 import Foundation
-import UIKit
 
 class Photo: NSObject {
+    
     let identifier: Int
     let url: URL
     let publicationDate: Date
     let isFavorite: Bool
     
-    init?(url: String, publicationDate: Date, isFavorite: Bool = false) {
-        
-        // get identifier
-        let firstRange = url.range(of: "photos/")
-        let secondRange = url.range(of: "/images")
-        if firstRange != nil && secondRange != nil {
-            self.identifier = (String(url[firstRange!.upperBound..<secondRange!.lowerBound]) as NSString).integerValue
-        } else {
-            return nil
-        }
-        
-        guard let photoUrl = URL(string: url) else { return nil }
-        self.url = photoUrl
-        
+    init(identifier: Int, url: URL, publicationDate: Date, isFavorite: Bool = false) {
+        self.identifier = identifier
+        self.url = url
         self.publicationDate = publicationDate
         self.isFavorite = isFavorite
     }

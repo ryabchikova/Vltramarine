@@ -70,34 +70,33 @@ class PhotoRepositorySQLiteImpl: PhotoRepository {
         }
     }
     
-    func getPhotosFor(feedTheme: FeedTheme) -> Promise<[Photo]> {
-        return Promise { seal in
+    func getPhotosFor(feedTheme: FeedTheme) -> Guarantee<[Photo]> {
+        return Guarantee { seal in
             DispatchQueue.global(qos: .userInitiated).async {
                 var items = [Photo]()
     
                 var query = ""
                 switch feedTheme {
                 case .favorites:
-                    query = "SELECT * FROM Photo WHERE isFavorite = 1;"
+                    query = "SELECT * FROM Photo WHERE isFavorite = 1 ORDER BY publicationDate DESC;"
                 default:
-                    query = "SELECT * FROM Photo WHERE feedTheme = \(feedTheme.rawValue);"
+                    query = "SELECT * FROM Photo WHERE feedTheme = \(feedTheme.rawValue) ORDER BY publicationDate DESC;"
                 }
                 
                 self.queue.inDatabase { db in
                     if let resultSet = db.executeQuery(query, withArgumentsIn: []) {
                         while resultSet.next() {
-                            guard let url = resultSet.string(forColumn: "url") else { continue }
+                            let identifier = Int(resultSet.int(forColumn: "identifier"))
+                            guard let urlString = resultSet.string(forColumn: "url") else { continue }
+                            guard let url = URL(string: urlString) else { continue }
                             guard let pubDate = resultSet.date(forColumn: "publicationDate") else { continue }
-                            // TODO test for correct casting
                             let isFavorite = resultSet.bool(forColumn: "isFavorite")
-                            if let photo = Photo(url: url, publicationDate: pubDate, isFavorite: isFavorite) {
-                                items.append(photo)
-                            }
+                            items.append(Photo(identifier: identifier, url: url, publicationDate: pubDate, isFavorite: isFavorite))
                         }
                     }
                 }
                 
-                seal.fulfill(items)
+                seal(items)
             }
         }
     }
@@ -113,7 +112,3 @@ class PhotoRepositorySQLiteImpl: PhotoRepository {
         }
     }
 }
-
-
-
-

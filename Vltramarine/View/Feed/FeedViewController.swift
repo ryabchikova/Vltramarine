@@ -11,21 +11,12 @@ import UIKit
 import PromiseKit
 import SDWebImage
 
-// TODO перейти на использование Photo
-fileprivate struct FeedItem {
-    
-    let identifier: Int
-    let url: URL
-    let publicationDate: String
-    var isFavorite: Bool = false
-}
-
 class FeedViewController : UIViewController, UITableViewDataSource, UITableViewDelegate {
     
     var feed: Feed!
     var photoService: PhotoService!
    
-    private var items = [FeedItem]()
+    private var items = [PhotoViewModel]()
     
     @IBOutlet var tableView: UITableView!
     
@@ -43,12 +34,11 @@ class FeedViewController : UIViewController, UITableViewDataSource, UITableViewD
     }
     
     private func fetchData() {
-    
         firstly {
-            self.photoService.getAllPhotosFrom(feed: feed)
-        }.map { photos -> [FeedItem] in
+            self.photoService.getAllPhotosFrom(feed: self.feed)
+        }.map { photos -> [PhotoViewModel] in
             return photos.map { photo in
-                return FeedItem(identifier: photo.identifier, url: photo.url, publicationDate: self.makeFormattedStringFrom(date: photo.publicationDate), isFavorite: photo.isFavorite)
+                return PhotoViewModel(photo)
             }
         }.done { feedItems in
             self.items = feedItems
@@ -82,15 +72,6 @@ class FeedViewController : UIViewController, UITableViewDataSource, UITableViewD
         
         return cell
     }
-    
-    // MARK: Helpers
-    private func makeFormattedStringFrom(date: Date) -> String {
-        let formatter = DateFormatter()
-        formatter.timeZone = TimeZone(abbreviation: "UTC")
-        formatter.dateFormat = "dd MMM yyyy 'at' HH:mm:ss"
-        return formatter.string(from: date)
-    }
-    
 }
 
 extension FeedViewController: FeedTableViewCellDelegate {

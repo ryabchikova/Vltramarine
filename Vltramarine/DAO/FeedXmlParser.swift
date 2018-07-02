@@ -10,15 +10,15 @@ import Foundation
 
 class FeedXMLParser: NSObject, XMLParserDelegate {
     
-    var photosArray = [(url: String, pubDate: Date)]()
+    var photosArray = [Photo]()
     
     var currentElementName = ""
     var currentElementText = ""
     
-    var curentPhotoUrl = ""
-    var curentPubDate = Date()
+    var currentDescription = ""
+    var currentPubDate = ""
 
-    func getAllPhotosFrom(feedUrl: String) -> [(url: String, pubDate: Date)] {
+    func getAllPhotosFrom(feedUrl: String) -> [Photo] {
         guard let url = URL(string: feedUrl) else { return [] }
         guard let xmlParser = XMLParser(contentsOf: url) else { return [] }
         xmlParser.delegate = self
@@ -41,35 +41,54 @@ class FeedXMLParser: NSObject, XMLParserDelegate {
     
     func parser(_ parser: XMLParser, didEndElement elementName: String, namespaceURI: String?, qualifiedName qName: String?) {
         if elementName == "description" {
-            // cut off trash
-            let fullText = self.currentElementText
-            let firstRange = fullText.range(of: "src=\"")
-            let secondRange = fullText.range(of: "\" /></a>")
-            var trimmedText = ""
-            if firstRange != nil && secondRange != nil {
-                trimmedText = String(fullText[firstRange!.upperBound..<secondRange!.lowerBound])
-            }
-            
-            self.curentPhotoUrl = trimmedText
+            self.currentDescription = self.currentElementText
             self.currentElementText = ""
             return
         }
         
         if elementName == "pubDate" {
-            let formatter = DateFormatter()
-            formatter.dateFormat = "EEE, dd MMM yyyy HH:mm:ss +zzzz"
-            if let pubDate = formatter.date(from: self.currentElementText) {
-                self.curentPubDate = pubDate
-            } else {
-                self.curentPubDate = Date()
-            }
-            
+            self.currentPubDate = self.currentElementText
             self.currentElementText = ""
             return
         }
         
         if elementName == "item" {
-            self.photosArray.append((url: self.curentPhotoUrl, pubDate: self.curentPubDate))
+            let fetchedUrl = self.fetchUrlFrom(self.currentDescription)
+            let fetchedIdentifier = (fetchedUrl != nil) ? self.fetchIdentifierFrom(fetchedUrl!.absoluteString) : nil
+            let fetchedDate = self.fetchDateFrom(self.currentPubDate)
+            
+            if let url = fetchedUrl, let identifier = fetchedIdentifier, let date = fetchedDate {
+                self.photosArray.append(Photo(identifier: identifier, url: url, publicationDate: date))
+            }
         }
     }
+    
+    // MARK: Helpers
+    
+    private func fetchUrlFrom(_ text: String) -> URL? {
+        let firstRange = text.range(of: "src=\"")
+        let secondRange = text.range(of: "\" /></a>")
+        if firstRange != nil && secondRange != nil {
+            return URL(string: String(text[firstRange!.upperBound..<secondRange!.lowerBound]))
+        }
+        
+        return nil
+    }
+    
+    private func fetchIdentifierFrom(_ url: String) -> Int? {
+        let firstRange = url.range(of: "photos/")
+        let secondRange = url.range(of: "/images")
+        if firstRange != nil && secondRange != nil {
+            return (String(url[firstRange!.upperBound..<secondRange!.lowerBound]) as NSString).integerValue
+        }
+        
+        return nil
+    }
+    
+    private func fetchDateFrom(_ text: String) -> Date? {
+        let formatter = DateFormatter()
+        formatter.dateFormat = "EEE, dd MMM yyyy HH:mm:ss +zzzz"
+        return formatter.date(from: text)
+    }
+    
 }

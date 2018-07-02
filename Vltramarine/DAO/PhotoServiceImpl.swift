@@ -16,7 +16,13 @@ class PhotoServiceImpl: PhotoService {
     func getAllPhotosFrom(feed: Feed) -> Promise<[Photo]> {
         
         if feed.theme == .favorites {
-            return self.getFavorites()
+            return Promise { seal in
+                firstly {
+                    self.repository.getPhotosFor(feedTheme: .favorites)
+                }.done { photos in
+                    seal.fulfill(photos)
+                }
+            }
         }
 
         return Promise { seal in
@@ -38,25 +44,10 @@ class PhotoServiceImpl: PhotoService {
         return self.repository.setFavoriteStateForPhotoWith(identifier:identifier, isFavorite:isFavorite)
     }
     
-    private func getFavorites() -> Promise<[Photo]> {
-        return Promise { seal in
-            firstly {
-                self.repository.getPhotosFor(feedTheme: .favorites)
-            }.done { photos in
-                seal.fulfill(photos)
-            }.catch { error in
-                seal.reject(error)
-            }
-        }
-    }
-    
-    
-    private func getPhotosFromRssFor(feed: Feed) -> Promise<[Photo]> {
-        return Promise { seal in
+    private func getPhotosFromRssFor(feed: Feed) -> Guarantee<[Photo]> {
+        return Guarantee { seal in
             DispatchQueue.global(qos: .userInitiated).async {
-                seal.fulfill(FeedXMLParser().getAllPhotosFrom(feedUrl: feed.url).compactMap { item -> Photo? in
-                    return Photo(url: item.url, publicationDate: item.pubDate)
-                })
+                seal(FeedXMLParser().getAllPhotosFrom(feedUrl: feed.url))
             }
         }
     }

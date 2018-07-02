@@ -11,6 +11,7 @@
 		427A442120E8D64500FFE7DF /* PhotoRepositorySQLiteImpl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 427A442020E8D64500FFE7DF /* PhotoRepositorySQLiteImpl.swift */; };
 		427A442520E94CCC00FFE7DF /* VltramarineError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 427A442420E94CCC00FFE7DF /* VltramarineError.swift */; };
 		42A807C020EA7184001D304A /* FeedTableViewCellDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42A807BF20EA7183001D304A /* FeedTableViewCellDelegate.swift */; };
+		42AFF2D320EAE23200E51D3A /* PhotoViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42AFF2D220EAE23200E51D3A /* PhotoViewModel.swift */; };
 		42C1848220E2FC2D0024B2F5 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42C1848120E2FC2D0024B2F5 /* AppDelegate.swift */; };
 		42C1848720E2FC2D0024B2F5 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 42C1848520E2FC2D0024B2F5 /* Main.storyboard */; };
 		42C1848920E2FC2E0024B2F5 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 42C1848820E2FC2E0024B2F5 /* Assets.xcassets */; };
@@ -25,7 +26,6 @@
 		42C184AB20E3A9680024B2F5 /* PhotoService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42C184AA20E3A9680024B2F5 /* PhotoService.swift */; };
 		42C184AD20E3AE9A0024B2F5 /* PhotoServiceImpl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42C184AC20E3AE9A0024B2F5 /* PhotoServiceImpl.swift */; };
 		42C184AF20E419E40024B2F5 /* FeedXmlParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42C184AE20E419E40024B2F5 /* FeedXmlParser.swift */; };
-		42C184B120E4E1D10024B2F5 /* FeedViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42C184B020E4E1D10024B2F5 /* FeedViewModel.swift */; };
 		42C184B320E4E7980024B2F5 /* ApplicationAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42C184B220E4E7980024B2F5 /* ApplicationAssembly.swift */; };
 		886A088E3B6AA74F8C5ECF80 /* Pods_Vltramarine.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 79048D12DFAC846E49658D39 /* Pods_Vltramarine.framework */; };
 /* End PBXBuildFile section */
@@ -37,6 +37,7 @@
 		427A442020E8D64500FFE7DF /* PhotoRepositorySQLiteImpl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoRepositorySQLiteImpl.swift; sourceTree = "<group>"; };
 		427A442420E94CCC00FFE7DF /* VltramarineError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VltramarineError.swift; sourceTree = "<group>"; };
 		42A807BF20EA7183001D304A /* FeedTableViewCellDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedTableViewCellDelegate.swift; sourceTree = "<group>"; };
+		42AFF2D220EAE23200E51D3A /* PhotoViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoViewModel.swift; sourceTree = "<group>"; };
 		42C1847E20E2FC2D0024B2F5 /* Vltramarine.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Vltramarine.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		42C1848120E2FC2D0024B2F5 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		42C1848620E2FC2D0024B2F5 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -53,7 +54,6 @@
 		42C184AA20E3A9680024B2F5 /* PhotoService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoService.swift; sourceTree = "<group>"; };
 		42C184AC20E3AE9A0024B2F5 /* PhotoServiceImpl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoServiceImpl.swift; sourceTree = "<group>"; };
 		42C184AE20E419E40024B2F5 /* FeedXmlParser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FeedXmlParser.swift; sourceTree = "<group>"; };
-		42C184B020E4E1D10024B2F5 /* FeedViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedViewModel.swift; sourceTree = "<group>"; };
 		42C184B220E4E7980024B2F5 /* ApplicationAssembly.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApplicationAssembly.swift; sourceTree = "<group>"; };
 		79048D12DFAC846E49658D39 /* Pods_Vltramarine.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Vltramarine.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -156,7 +156,7 @@
 			isa = PBXGroup;
 			children = (
 				42C1849A20E30AC00024B2F5 /* MenuViewModel.swift */,
-				42C184B020E4E1D10024B2F5 /* FeedViewModel.swift */,
+				42AFF2D220EAE23200E51D3A /* PhotoViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -321,7 +321,7 @@
 				427A442120E8D64500FFE7DF /* PhotoRepositorySQLiteImpl.swift in Sources */,
 				42C184B320E4E7980024B2F5 /* ApplicationAssembly.swift in Sources */,
 				42C184AF20E419E40024B2F5 /* FeedXmlParser.swift in Sources */,
-				42C184B120E4E1D10024B2F5 /* FeedViewModel.swift in Sources */,
+				42AFF2D320EAE23200E51D3A /* PhotoViewModel.swift in Sources */,
 				42C1849B20E30AC00024B2F5 /* MenuViewModel.swift in Sources */,
 				42C184AB20E3A9680024B2F5 /* PhotoService.swift in Sources */,
 				42C1849D20E35EA90024B2F5 /* Feed.swift in Sources */,

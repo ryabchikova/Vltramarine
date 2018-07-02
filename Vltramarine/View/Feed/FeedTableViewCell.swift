@@ -24,8 +24,6 @@ class FeedTableViewCell : UITableViewCell {
     }
     
     @IBAction func addToFavoritesAction(_ sender: Any) {
-        let newState = !self.isFavorite
-        delegate?.feedTableViewCellNeedChangeStateOn(newFavoriteState: newState, delegatedFrom: self)
+        delegate?.feedTableViewCellNeedChangeStateOn(newFavoriteState: !self.isFavorite, delegatedFrom: self)
     }
-    
 }
