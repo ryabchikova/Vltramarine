@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4274F36D20EB757900D76E4F /* VltramarineFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4274F36C20EB757900D76E4F /* VltramarineFactory.swift */; };
+		4274F36F20EB785F00D76E4F /* ObjectFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4274F36E20EB785F00D76E4F /* ObjectFactory.swift */; };
 		427A441F20E8D61700FFE7DF /* PhotoRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 427A441E20E8D61700FFE7DF /* PhotoRepository.swift */; };
 		427A442120E8D64500FFE7DF /* PhotoRepositorySQLiteImpl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 427A442020E8D64500FFE7DF /* PhotoRepositorySQLiteImpl.swift */; };
 		427A442520E94CCC00FFE7DF /* VltramarineError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 427A442420E94CCC00FFE7DF /* VltramarineError.swift */; };
@@ -26,13 +28,14 @@
 		42C184AB20E3A9680024B2F5 /* PhotoService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42C184AA20E3A9680024B2F5 /* PhotoService.swift */; };
 		42C184AD20E3AE9A0024B2F5 /* PhotoServiceImpl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42C184AC20E3AE9A0024B2F5 /* PhotoServiceImpl.swift */; };
 		42C184AF20E419E40024B2F5 /* FeedXmlParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42C184AE20E419E40024B2F5 /* FeedXmlParser.swift */; };
-		42C184B320E4E7980024B2F5 /* ApplicationAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42C184B220E4E7980024B2F5 /* ApplicationAssembly.swift */; };
 		886A088E3B6AA74F8C5ECF80 /* Pods_Vltramarine.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 79048D12DFAC846E49658D39 /* Pods_Vltramarine.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		26091F07493B18C4C7AD3664 /* Pods-Vltramarine.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Vltramarine.release.xcconfig"; path = "Pods/Target Support Files/Pods-Vltramarine/Pods-Vltramarine.release.xcconfig"; sourceTree = "<group>"; };
 		292F71E25763117DE6CC9D7E /* Pods-Vltramarine.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Vltramarine.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Vltramarine/Pods-Vltramarine.debug.xcconfig"; sourceTree = "<group>"; };
+		4274F36C20EB757900D76E4F /* VltramarineFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VltramarineFactory.swift; sourceTree = "<group>"; };
+		4274F36E20EB785F00D76E4F /* ObjectFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ObjectFactory.swift; sourceTree = "<group>"; };
 		427A441E20E8D61700FFE7DF /* PhotoRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoRepository.swift; sourceTree = "<group>"; };
 		427A442020E8D64500FFE7DF /* PhotoRepositorySQLiteImpl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoRepositorySQLiteImpl.swift; sourceTree = "<group>"; };
 		427A442420E94CCC00FFE7DF /* VltramarineError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VltramarineError.swift; sourceTree = "<group>"; };
@@ -54,7 +57,6 @@
 		42C184AA20E3A9680024B2F5 /* PhotoService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoService.swift; sourceTree = "<group>"; };
 		42C184AC20E3AE9A0024B2F5 /* PhotoServiceImpl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoServiceImpl.swift; sourceTree = "<group>"; };
 		42C184AE20E419E40024B2F5 /* FeedXmlParser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FeedXmlParser.swift; sourceTree = "<group>"; };
-		42C184B220E4E7980024B2F5 /* ApplicationAssembly.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApplicationAssembly.swift; sourceTree = "<group>"; };
 		79048D12DFAC846E49658D39 /* Pods_Vltramarine.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Vltramarine.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -70,6 +72,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		4274F36B20EB753A00D76E4F /* Factory */ = {
+			isa = PBXGroup;
+			children = (
+				4274F36C20EB757900D76E4F /* VltramarineFactory.swift */,
+				4274F36E20EB785F00D76E4F /* ObjectFactory.swift */,
+			);
+			path = Factory;
+			sourceTree = "<group>";
+		};
 		427A442320E94CA200FFE7DF /* Utils */ = {
 			isa = PBXGroup;
 			children = (
@@ -102,7 +113,7 @@
 				42C1848120E2FC2D0024B2F5 /* AppDelegate.swift */,
 				42C1848520E2FC2D0024B2F5 /* Main.storyboard */,
 				42C1848A20E2FC2E0024B2F5 /* LaunchScreen.storyboard */,
-				42C1849320E2FC9F0024B2F5 /* Assembly */,
+				4274F36B20EB753A00D76E4F /* Factory */,
 				42C1849420E2FCB70024B2F5 /* View */,
 				42C1849920E30A990024B2F5 /* ViewModel */,
 				42C1849620E2FCFF0024B2F5 /* DAO */,
@@ -112,14 +123,6 @@
 				427A442320E94CA200FFE7DF /* Utils */,
 			);
 			path = Vltramarine;
-			sourceTree = "<group>";
-		};
-		42C1849320E2FC9F0024B2F5 /* Assembly */ = {
-			isa = PBXGroup;
-			children = (
-				42C184B220E4E7980024B2F5 /* ApplicationAssembly.swift */,
-			);
-			path = Assembly;
 			sourceTree = "<group>";
 		};
 		42C1849420E2FCB70024B2F5 /* View */ = {
@@ -294,14 +297,12 @@
 				"${BUILT_PRODUCTS_DIR}/FMDB/FMDB.framework",
 				"${BUILT_PRODUCTS_DIR}/PromiseKit/PromiseKit.framework",
 				"${BUILT_PRODUCTS_DIR}/SDWebImage/SDWebImage.framework",
-				"${BUILT_PRODUCTS_DIR}/Typhoon/Typhoon.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FMDB.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/PromiseKit.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SDWebImage.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Typhoon.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -318,8 +319,8 @@
 				427A442520E94CCC00FFE7DF /* VltramarineError.swift in Sources */,
 				427A441F20E8D61700FFE7DF /* PhotoRepository.swift in Sources */,
 				42C184AD20E3AE9A0024B2F5 /* PhotoServiceImpl.swift in Sources */,
+				4274F36D20EB757900D76E4F /* VltramarineFactory.swift in Sources */,
 				427A442120E8D64500FFE7DF /* PhotoRepositorySQLiteImpl.swift in Sources */,
-				42C184B320E4E7980024B2F5 /* ApplicationAssembly.swift in Sources */,
 				42C184AF20E419E40024B2F5 /* FeedXmlParser.swift in Sources */,
 				42AFF2D320EAE23200E51D3A /* PhotoViewModel.swift in Sources */,
 				42C1849B20E30AC00024B2F5 /* MenuViewModel.swift in Sources */,
@@ -328,6 +329,7 @@
 				42C184A620E389150024B2F5 /* FeedTableViewCell.swift in Sources */,
 				42A807C020EA7184001D304A /* FeedTableViewCellDelegate.swift in Sources */,
 				42C1848220E2FC2D0024B2F5 /* AppDelegate.swift in Sources */,
+				4274F36F20EB785F00D76E4F /* ObjectFactory.swift in Sources */,
 				42C184A920E39FB30024B2F5 /* Photo.swift in Sources */,
 				42C1849820E305DD0024B2F5 /* MenuViewController.swift in Sources */,
 				42C184A420E387150024B2F5 /* FeedViewController.swift in Sources */,
@@ -479,10 +481,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = HYC2DXWEX7;
 				INFOPLIST_FILE = Vltramarine/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-				);
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.ryabchikova.Vltramarine;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
@@ -498,10 +497,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = HYC2DXWEX7;
 				INFOPLIST_FILE = Vltramarine/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-				);
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.ryabchikova.Vltramarine;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;

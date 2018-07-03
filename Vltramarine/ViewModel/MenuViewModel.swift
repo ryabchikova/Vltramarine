@@ -25,4 +25,8 @@ class MenuViewModel {
                  MenuItem(feedTheme: .favorites, title: "Favorites"),
         ];
     }
+    
+    init(menuItems: [MenuItem]) {
+        self.items = menuItems
+    }
 }

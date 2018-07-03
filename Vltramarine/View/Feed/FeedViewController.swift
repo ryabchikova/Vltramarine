@@ -13,12 +13,15 @@ import SDWebImage
 
 class FeedViewController : UIViewController, UITableViewDataSource, UITableViewDelegate {
     
-    var feed: Feed!
-    var photoService: PhotoService!
-   
+    private var feed: Feed!
     private var items = [PhotoViewModel]()
+    var photoService: PhotoService!
     
     @IBOutlet var tableView: UITableView!
+    
+    func setContextWith(feed: Feed) {
+        self.feed = feed
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -44,8 +47,8 @@ class FeedViewController : UIViewController, UITableViewDataSource, UITableViewD
             self.items = feedItems
             self.tableView.reloadData()
         }.catch { error in
-            NSLog(error.localizedDescription)
             // TODO show error page
+            NSLog(error.localizedDescription)
         }
     }
     

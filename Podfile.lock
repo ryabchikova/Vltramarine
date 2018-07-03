@@ -14,34 +14,23 @@ PODS:
   - SDWebImage (4.3.3):
     - SDWebImage/Core (= 4.3.3)
   - SDWebImage/Core (4.3.3)
-  - Typhoon (4.0.4):
-    - Typhoon/DeallocNotifier (= 4.0.4)
-    - Typhoon/IntrospectionUtils (= 4.0.4)
-    - Typhoon/no-arc (= 4.0.4)
-  - Typhoon/DeallocNotifier (4.0.4)
-  - Typhoon/IntrospectionUtils (4.0.4)
-  - Typhoon/no-arc (4.0.4):
-    - Typhoon/IntrospectionUtils
 
 DEPENDENCIES:
   - FMDB
   - PromiseKit
   - SDWebImage
-  - Typhoon
 
 SPEC REPOS:
   https://github.com/cocoapods/specs.git:
     - FMDB
     - PromiseKit
     - SDWebImage
-    - Typhoon
 
 SPEC CHECKSUMS:
   FMDB: 6198a90e7b6900cfc046e6bc0ef6ebb7be9236aa
   PromiseKit: 62f37bb4900a9b0b7550d017e41497171d93face
   SDWebImage: de4d90b5bff3571eae7bd16202b1f43135409fa5
-  Typhoon: fe0fa417515e279f68170cfe3ae9c1d5eae53205
 
-PODFILE CHECKSUM: cd7a06cbc312fd2a71497bafebfbbdeb1979258e
+PODFILE CHECKSUM: 63e80a66bd66935d63ee3e91029275a6b4dbe1ff
 
 COCOAPODS: 1.5.3

@@ -11,7 +11,12 @@ import UIKit
 
 class MenuViewController : UICollectionViewController, UICollectionViewDelegateFlowLayout {
     
-    private var viewModel = MenuViewModel()
+    private var viewModel: MenuViewModel!
+    
+    override func awakeFromNib() {
+        super.awakeFromNib()
+        self.viewModel = VltramarineFactory.makeMenuViewModel()
+    }
     
     // MARK: UICollectionViewDataSource
     
@@ -36,15 +41,8 @@ class MenuViewController : UICollectionViewController, UICollectionViewDelegateF
     }
     
     override func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        let storyboard = UIStoryboard(name: "Main", bundle: nil)
-        let feedViewController = storyboard.instantiateViewController(withIdentifier: "FeedViewController") as! FeedViewController
-        
-        // TODO bad bad bad !!!!
-        feedViewController.feed = Feed(feedTheme: self.viewModel.items[indexPath.row].feedTheme)
-        let photoService = PhotoServiceImpl()
-        photoService.repository = PhotoRepositorySQLiteImpl()
-        feedViewController.photoService = photoService
-        
+        let feedViewController = VltramarineFactory.makeFeedViewController()
+        feedViewController.setContextWith(feed: Feed(feedTheme: self.viewModel.items[indexPath.row].feedTheme))
         self.navigationController?.pushViewController(feedViewController, animated: true)
     }
     

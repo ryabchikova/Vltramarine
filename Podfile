@@ -4,7 +4,6 @@ target 'Vltramarine' do
 
   use_frameworks!
 
-  pod 'Typhoon'  
   pod 'PromiseKit'
   pod 'SDWebImage'
   pod 'FMDB'
