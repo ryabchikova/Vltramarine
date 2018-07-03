@@ -8,15 +8,16 @@
 
 import Foundation
 
+// TODO скрыть все что касается XMLParserDelegate
 class FeedXMLParser: NSObject, XMLParserDelegate {
     
-    var photosArray = [Photo]()
+    private var photosArray = [Photo]()
     
-    var currentElementName = ""
-    var currentElementText = ""
+    private var currentElementName = ""
+    private var currentElementText = ""
     
-    var currentDescription = ""
-    var currentPubDate = ""
+    private var currentDescription = ""
+    private var currentPubDate = ""
 
     func getAllPhotosFrom(feedUrl: String) -> [Photo] {
         guard let url = URL(string: feedUrl) else { return [] }

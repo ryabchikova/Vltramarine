@@ -7,8 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4241B0781F9C70614D4864F3 /* Pods_Vltramarine.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4274F38220EBA60000D76E4F /* Pods_Vltramarine.framework */; };
 		4274F36D20EB757900D76E4F /* VltramarineFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4274F36C20EB757900D76E4F /* VltramarineFactory.swift */; };
 		4274F36F20EB785F00D76E4F /* ObjectFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4274F36E20EB785F00D76E4F /* ObjectFactory.swift */; };
+		4274F38B20EBBC2400D76E4F /* VltramarineTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4274F38A20EBBC2400D76E4F /* VltramarineTests.swift */; };
+		4274F39320EBBD1F00D76E4F /* FeedXmlParserTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4274F39220EBBD1F00D76E4F /* FeedXmlParserTests.swift */; };
 		427A441F20E8D61700FFE7DF /* PhotoRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 427A441E20E8D61700FFE7DF /* PhotoRepository.swift */; };
 		427A442120E8D64500FFE7DF /* PhotoRepositorySQLiteImpl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 427A442020E8D64500FFE7DF /* PhotoRepositorySQLiteImpl.swift */; };
 		427A442520E94CCC00FFE7DF /* VltramarineError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 427A442420E94CCC00FFE7DF /* VltramarineError.swift */; };
@@ -31,11 +34,27 @@
 		886A088E3B6AA74F8C5ECF80 /* Pods_Vltramarine.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 79048D12DFAC846E49658D39 /* Pods_Vltramarine.framework */; };
 /* End PBXBuildFile section */
 
+/* Begin PBXContainerItemProxy section */
+		4274F38D20EBBC2400D76E4F /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 42C1847620E2FC2D0024B2F5 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 42C1847D20E2FC2D0024B2F5;
+			remoteInfo = Vltramarine;
+		};
+/* End PBXContainerItemProxy section */
+
 /* Begin PBXFileReference section */
 		26091F07493B18C4C7AD3664 /* Pods-Vltramarine.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Vltramarine.release.xcconfig"; path = "Pods/Target Support Files/Pods-Vltramarine/Pods-Vltramarine.release.xcconfig"; sourceTree = "<group>"; };
 		292F71E25763117DE6CC9D7E /* Pods-Vltramarine.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Vltramarine.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Vltramarine/Pods-Vltramarine.debug.xcconfig"; sourceTree = "<group>"; };
 		4274F36C20EB757900D76E4F /* VltramarineFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VltramarineFactory.swift; sourceTree = "<group>"; };
 		4274F36E20EB785F00D76E4F /* ObjectFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ObjectFactory.swift; sourceTree = "<group>"; };
+		4274F38020EBA51400D76E4F /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Platforms/iPhoneOS.platform/Developer/Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
+		4274F38220EBA60000D76E4F /* Pods_Vltramarine.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Pods_Vltramarine.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		4274F38820EBBC2400D76E4F /* VltramarineTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = VltramarineTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		4274F38A20EBBC2400D76E4F /* VltramarineTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VltramarineTests.swift; sourceTree = "<group>"; };
+		4274F38C20EBBC2400D76E4F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		4274F39220EBBD1F00D76E4F /* FeedXmlParserTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FeedXmlParserTests.swift; sourceTree = "<group>"; };
 		427A441E20E8D61700FFE7DF /* PhotoRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoRepository.swift; sourceTree = "<group>"; };
 		427A442020E8D64500FFE7DF /* PhotoRepositorySQLiteImpl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoRepositorySQLiteImpl.swift; sourceTree = "<group>"; };
 		427A442420E94CCC00FFE7DF /* VltramarineError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VltramarineError.swift; sourceTree = "<group>"; };
@@ -61,11 +80,19 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		4274F38520EBBC2400D76E4F /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		42C1847B20E2FC2D0024B2F5 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 				886A088E3B6AA74F8C5ECF80 /* Pods_Vltramarine.framework in Frameworks */,
+				4241B0781F9C70614D4864F3 /* Pods_Vltramarine.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -81,6 +108,16 @@
 			path = Factory;
 			sourceTree = "<group>";
 		};
+		4274F38920EBBC2400D76E4F /* VltramarineTests */ = {
+			isa = PBXGroup;
+			children = (
+				4274F39220EBBD1F00D76E4F /* FeedXmlParserTests.swift */,
+				4274F38A20EBBC2400D76E4F /* VltramarineTests.swift */,
+				4274F38C20EBBC2400D76E4F /* Info.plist */,
+			);
+			path = VltramarineTests;
+			sourceTree = "<group>";
+		};
 		427A442320E94CA200FFE7DF /* Utils */ = {
 			isa = PBXGroup;
 			children = (
@@ -93,6 +130,7 @@
 			isa = PBXGroup;
 			children = (
 				42C1848020E2FC2D0024B2F5 /* Vltramarine */,
+				4274F38920EBBC2400D76E4F /* VltramarineTests */,
 				42C1847F20E2FC2D0024B2F5 /* Products */,
 				6239AFB268C998393CCC835D /* Pods */,
 				7597BFB789E48AB001873DD2 /* Frameworks */,
@@ -103,6 +141,7 @@
 			isa = PBXGroup;
 			children = (
 				42C1847E20E2FC2D0024B2F5 /* Vltramarine.app */,
+				4274F38820EBBC2400D76E4F /* VltramarineTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -113,13 +152,13 @@
 				42C1848120E2FC2D0024B2F5 /* AppDelegate.swift */,
 				42C1848520E2FC2D0024B2F5 /* Main.storyboard */,
 				42C1848A20E2FC2E0024B2F5 /* LaunchScreen.storyboard */,
+				42C1848D20E2FC2E0024B2F5 /* Info.plist */,
+				42C1848820E2FC2E0024B2F5 /* Assets.xcassets */,
 				4274F36B20EB753A00D76E4F /* Factory */,
 				42C1849420E2FCB70024B2F5 /* View */,
 				42C1849920E30A990024B2F5 /* ViewModel */,
 				42C1849620E2FCFF0024B2F5 /* DAO */,
 				42C1849520E2FCF60024B2F5 /* Model */,
-				42C1848D20E2FC2E0024B2F5 /* Info.plist */,
-				42C1848820E2FC2E0024B2F5 /* Assets.xcassets */,
 				427A442320E94CA200FFE7DF /* Utils */,
 			);
 			path = Vltramarine;
@@ -195,6 +234,8 @@
 		7597BFB789E48AB001873DD2 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				4274F38220EBA60000D76E4F /* Pods_Vltramarine.framework */,
+				4274F38020EBA51400D76E4F /* XCTest.framework */,
 				79048D12DFAC846E49658D39 /* Pods_Vltramarine.framework */,
 			);
 			name = Frameworks;
@@ -203,6 +244,24 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
+		4274F38720EBBC2400D76E4F /* VltramarineTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 4274F38F20EBBC2400D76E4F /* Build configuration list for PBXNativeTarget "VltramarineTests" */;
+			buildPhases = (
+				4274F38420EBBC2400D76E4F /* Sources */,
+				4274F38520EBBC2400D76E4F /* Frameworks */,
+				4274F38620EBBC2400D76E4F /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				4274F38E20EBBC2400D76E4F /* PBXTargetDependency */,
+			);
+			name = VltramarineTests;
+			productName = VltramarineTests;
+			productReference = 4274F38820EBBC2400D76E4F /* VltramarineTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 		42C1847D20E2FC2D0024B2F5 /* Vltramarine */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = 42C1849020E2FC2E0024B2F5 /* Build configuration list for PBXNativeTarget "Vltramarine" */;
@@ -232,6 +291,10 @@
 				LastUpgradeCheck = 0940;
 				ORGANIZATIONNAME = ryabchikova;
 				TargetAttributes = {
+					4274F38720EBBC2400D76E4F = {
+						CreatedOnToolsVersion = 9.4.1;
+						TestTargetID = 42C1847D20E2FC2D0024B2F5;
+					};
 					42C1847D20E2FC2D0024B2F5 = {
 						CreatedOnToolsVersion = 9.4.1;
 					};
@@ -251,11 +314,19 @@
 			projectRoot = "";
 			targets = (
 				42C1847D20E2FC2D0024B2F5 /* Vltramarine */,
+				4274F38720EBBC2400D76E4F /* VltramarineTests */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		4274F38620EBBC2400D76E4F /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		42C1847C20E2FC2D0024B2F5 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -312,6 +383,15 @@
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		4274F38420EBBC2400D76E4F /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				4274F39320EBBD1F00D76E4F /* FeedXmlParserTests.swift in Sources */,
+				4274F38B20EBBC2400D76E4F /* VltramarineTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		42C1847A20E2FC2D0024B2F5 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -339,6 +419,14 @@
 		};
 /* End PBXSourcesBuildPhase section */
 
+/* Begin PBXTargetDependency section */
+		4274F38E20EBBC2400D76E4F /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 42C1847D20E2FC2D0024B2F5 /* Vltramarine */;
+			targetProxy = 4274F38D20EBBC2400D76E4F /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
 /* Begin PBXVariantGroup section */
 		42C1848520E2FC2D0024B2F5 /* Main.storyboard */ = {
 			isa = PBXVariantGroup;
@@ -359,6 +447,46 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
+		4274F39020EBBC2400D76E4F /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = HYC2DXWEX7;
+				INFOPLIST_FILE = VltramarineTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.ryabchikova.VltramarineTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Vltramarine.app/Vltramarine";
+			};
+			name = Debug;
+		};
+		4274F39120EBBC2400D76E4F /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = HYC2DXWEX7;
+				INFOPLIST_FILE = VltramarineTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.ryabchikova.VltramarineTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Vltramarine.app/Vltramarine";
+			};
+			name = Release;
+		};
 		42C1848E20E2FC2E0024B2F5 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -481,7 +609,10 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = HYC2DXWEX7;
 				INFOPLIST_FILE = Vltramarine/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.ryabchikova.Vltramarine;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
@@ -497,7 +628,10 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = HYC2DXWEX7;
 				INFOPLIST_FILE = Vltramarine/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.ryabchikova.Vltramarine;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
@@ -508,6 +642,15 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		4274F38F20EBBC2400D76E4F /* Build configuration list for PBXNativeTarget "VltramarineTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				4274F39020EBBC2400D76E4F /* Debug */,
+				4274F39120EBBC2400D76E4F /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		42C1847920E2FC2D0024B2F5 /* Build configuration list for PBXProject "Vltramarine" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
