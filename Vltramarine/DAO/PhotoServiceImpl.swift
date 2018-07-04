@@ -44,10 +44,15 @@ class PhotoServiceImpl: PhotoService {
         return self.repository.setFavoriteStateForPhotoWith(identifier:identifier, isFavorite:isFavorite)
     }
     
-    private func getPhotosFromRssFor(feed: Feed) -> Guarantee<[Photo]> {
-        return Guarantee { seal in
+    private func getPhotosFromRssFor(feed: Feed) -> Promise<[Photo]> {
+        return Promise { seal in
             DispatchQueue.global(qos: .userInitiated).async {
-                seal(FeedXMLParser().getAllPhotosFrom(feedUrl: feed.url))
+                do {
+                    let photos = try FeedXMLParser().getAllPhotosFrom(feedUrl: feed.url)
+                    seal.fulfill(photos)
+                } catch { error
+                    seal.reject(error)
+                }
             }
         }
     }

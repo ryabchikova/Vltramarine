@@ -8,7 +8,6 @@
 
 import Foundation
 
-// TODO скрыть все что касается XMLParserDelegate
 class FeedXMLParser: NSObject, XMLParserDelegate {
     
     private var photosArray = [Photo]()
@@ -19,9 +18,13 @@ class FeedXMLParser: NSObject, XMLParserDelegate {
     private var currentDescription = ""
     private var currentPubDate = ""
 
-    func getAllPhotosFrom(feedUrl: String) -> [Photo] {
-        guard let url = URL(string: feedUrl) else { return [] }
-        guard let xmlParser = XMLParser(contentsOf: url) else { return [] }
+    func getAllPhotosFrom(feedUrl: String) throws -> [Photo] {
+        guard let url = URL(string: feedUrl) else {
+            throw NSError(domain: kFeedXmlParserErrorDomain, code: FeedXmlParserErrorCode.invalidDocumentUrl.rawValue, userInfo:  [NSLocalizedDescriptionKey: "Document URL sent to xml-parser is invalid"])
+        }
+        guard let xmlParser = XMLParser(contentsOf: url) else {
+            throw NSError(domain: kFeedXmlParserErrorDomain, code: FeedXmlParserErrorCode.invalidDocumentUrl.rawValue, userInfo:  [NSLocalizedDescriptionKey: "Document URL sent to xml-parser is invalid"])
+        }
         xmlParser.delegate = self
         
         self.photosArray = []

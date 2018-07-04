@@ -30,6 +30,10 @@ class FeedViewController : UIViewController, UITableViewDataSource, UITableViewD
         self.tableView.dataSource = self
         self.tableView.delegate = self
         self.tableView.tableFooterView = UIView()
+        
+        // TODO copipaste!!!
+        self.navigationItem.backBarButtonItem = UIBarButtonItem(title: "", style: .done, target: nil, action: nil)
+        self.navigationItem.backBarButtonItem?.tintColor = vltrmnDarkGrayColor
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -75,6 +79,12 @@ class FeedViewController : UIViewController, UITableViewDataSource, UITableViewD
         cell.isFavorite = self.items[indexPath.row].isFavorite
         
         return cell
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let fullScreenPhotoViewController = VltramarineFactory.makeFullScreenPhotoViewController()
+        fullScreenPhotoViewController.photoUrl = self.items[indexPath.row].url
+        self.navigationController?.pushViewController(fullScreenPhotoViewController, animated: true)
     }
 }
 

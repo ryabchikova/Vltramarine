@@ -25,7 +25,7 @@ class PhotoViewModel: NSObject {
     private class func readableFormatFor(date: Date) -> String {
         let formatter = DateFormatter()
         formatter.timeZone = TimeZone(abbreviation: "UTC")
-        formatter.dateFormat = "dd MMM yyyy 'at' HH:mm:ss"
+        formatter.dateFormat = "dd MMM yyyy 'at' HH:mm"
         return formatter.string(from: date)
     }
 }

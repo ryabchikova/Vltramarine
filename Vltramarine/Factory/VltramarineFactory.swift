@@ -35,5 +35,9 @@ class VltramarineFactory: ObjectFactory {
         return PhotoRepositorySQLiteImpl()
     }
     
+    static func makeFullScreenPhotoViewController() -> FullScreenPhotoViewController {
+        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+        return storyboard.instantiateViewController(withIdentifier: "FullScreenPhotoViewController") as! FullScreenPhotoViewController
+    }
 
 }

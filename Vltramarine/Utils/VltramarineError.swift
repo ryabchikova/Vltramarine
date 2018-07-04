@@ -8,4 +8,12 @@
 
 import Foundation
 
+
 let kPhotoRepositoryErrorDomain = "PhotoRepository"
+
+
+let kFeedXmlParserErrorDomain = "FeedXmlParser"
+
+enum FeedXmlParserErrorCode: Int {
+    case invalidDocumentUrl = 1
+}

@@ -8,11 +8,15 @@
 
 /* Begin PBXBuildFile section */
 		4241B0781F9C70614D4864F3 /* Pods_Vltramarine.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4274F38220EBA60000D76E4F /* Pods_Vltramarine.framework */; };
+		42424E3920ED818600F3D20D /* simpleTextFile.txt in Resources */ = {isa = PBXBuildFile; fileRef = 42424E3820ED818600F3D20D /* simpleTextFile.txt */; };
 		4274F36D20EB757900D76E4F /* VltramarineFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4274F36C20EB757900D76E4F /* VltramarineFactory.swift */; };
 		4274F36F20EB785F00D76E4F /* ObjectFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4274F36E20EB785F00D76E4F /* ObjectFactory.swift */; };
 		4274F38B20EBBC2400D76E4F /* VltramarineTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4274F38A20EBBC2400D76E4F /* VltramarineTests.swift */; };
 		4274F39320EBBD1F00D76E4F /* FeedXmlParserTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4274F39220EBBD1F00D76E4F /* FeedXmlParserTests.swift */; };
 		4274F39520ECA86800D76E4F /* VltramarineColorsAndFonts.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4274F39420ECA86800D76E4F /* VltramarineColorsAndFonts.swift */; };
+		4274F39720ECEE8D00D76E4F /* FullScreenPhotoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4274F39620ECEE8D00D76E4F /* FullScreenPhotoViewController.swift */; };
+		4274F3A120ED46DE00D76E4F /* correctTestFeed.xml in Resources */ = {isa = PBXBuildFile; fileRef = 4274F3A020ED46DE00D76E4F /* correctTestFeed.xml */; };
+		4274F3A320ED634300D76E4F /* invalidTestFeed.xml in Resources */ = {isa = PBXBuildFile; fileRef = 4274F3A220ED634200D76E4F /* invalidTestFeed.xml */; };
 		427A441F20E8D61700FFE7DF /* PhotoRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 427A441E20E8D61700FFE7DF /* PhotoRepository.swift */; };
 		427A442120E8D64500FFE7DF /* PhotoRepositorySQLiteImpl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 427A442020E8D64500FFE7DF /* PhotoRepositorySQLiteImpl.swift */; };
 		427A442520E94CCC00FFE7DF /* VltramarineError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 427A442420E94CCC00FFE7DF /* VltramarineError.swift */; };
@@ -48,6 +52,7 @@
 /* Begin PBXFileReference section */
 		26091F07493B18C4C7AD3664 /* Pods-Vltramarine.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Vltramarine.release.xcconfig"; path = "Pods/Target Support Files/Pods-Vltramarine/Pods-Vltramarine.release.xcconfig"; sourceTree = "<group>"; };
 		292F71E25763117DE6CC9D7E /* Pods-Vltramarine.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Vltramarine.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Vltramarine/Pods-Vltramarine.debug.xcconfig"; sourceTree = "<group>"; };
+		42424E3820ED818600F3D20D /* simpleTextFile.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = simpleTextFile.txt; sourceTree = "<group>"; };
 		4274F36C20EB757900D76E4F /* VltramarineFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VltramarineFactory.swift; sourceTree = "<group>"; };
 		4274F36E20EB785F00D76E4F /* ObjectFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ObjectFactory.swift; sourceTree = "<group>"; };
 		4274F38020EBA51400D76E4F /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Platforms/iPhoneOS.platform/Developer/Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
@@ -57,6 +62,9 @@
 		4274F38C20EBBC2400D76E4F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		4274F39220EBBD1F00D76E4F /* FeedXmlParserTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FeedXmlParserTests.swift; sourceTree = "<group>"; };
 		4274F39420ECA86800D76E4F /* VltramarineColorsAndFonts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VltramarineColorsAndFonts.swift; sourceTree = "<group>"; };
+		4274F39620ECEE8D00D76E4F /* FullScreenPhotoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FullScreenPhotoViewController.swift; sourceTree = "<group>"; };
+		4274F3A020ED46DE00D76E4F /* correctTestFeed.xml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = correctTestFeed.xml; sourceTree = "<group>"; };
+		4274F3A220ED634200D76E4F /* invalidTestFeed.xml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = invalidTestFeed.xml; sourceTree = "<group>"; };
 		427A441E20E8D61700FFE7DF /* PhotoRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoRepository.swift; sourceTree = "<group>"; };
 		427A442020E8D64500FFE7DF /* PhotoRepositorySQLiteImpl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoRepositorySQLiteImpl.swift; sourceTree = "<group>"; };
 		427A442420E94CCC00FFE7DF /* VltramarineError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VltramarineError.swift; sourceTree = "<group>"; };
@@ -113,11 +121,22 @@
 		4274F38920EBBC2400D76E4F /* VltramarineTests */ = {
 			isa = PBXGroup;
 			children = (
+				42424E3820ED818600F3D20D /* simpleTextFile.txt */,
+				4274F3A220ED634200D76E4F /* invalidTestFeed.xml */,
+				4274F3A020ED46DE00D76E4F /* correctTestFeed.xml */,
 				4274F39220EBBD1F00D76E4F /* FeedXmlParserTests.swift */,
 				4274F38A20EBBC2400D76E4F /* VltramarineTests.swift */,
 				4274F38C20EBBC2400D76E4F /* Info.plist */,
 			);
 			path = VltramarineTests;
+			sourceTree = "<group>";
+		};
+		4274F39920ECF89300D76E4F /* FullScreenPhoto */ = {
+			isa = PBXGroup;
+			children = (
+				4274F39620ECEE8D00D76E4F /* FullScreenPhotoViewController.swift */,
+			);
+			path = FullScreenPhoto;
 			sourceTree = "<group>";
 		};
 		427A442320E94CA200FFE7DF /* Utils */ = {
@@ -172,6 +191,7 @@
 			children = (
 				42C184A220E386EE0024B2F5 /* Menu */,
 				42C184A720E398D00024B2F5 /* Feed */,
+				4274F39920ECF89300D76E4F /* FullScreenPhoto */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -327,6 +347,9 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4274F3A120ED46DE00D76E4F /* correctTestFeed.xml in Resources */,
+				42424E3920ED818600F3D20D /* simpleTextFile.txt in Resources */,
+				4274F3A320ED634300D76E4F /* invalidTestFeed.xml in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -413,6 +436,7 @@
 				42C184A620E389150024B2F5 /* FeedTableViewCell.swift in Sources */,
 				42A807C020EA7184001D304A /* FeedTableViewCellDelegate.swift in Sources */,
 				42C1848220E2FC2D0024B2F5 /* AppDelegate.swift in Sources */,
+				4274F39720ECEE8D00D76E4F /* FullScreenPhotoViewController.swift in Sources */,
 				4274F36F20EB785F00D76E4F /* ObjectFactory.swift in Sources */,
 				42C184A920E39FB30024B2F5 /* Photo.swift in Sources */,
 				42C1849820E305DD0024B2F5 /* MenuViewController.swift in Sources */,
