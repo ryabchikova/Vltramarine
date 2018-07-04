@@ -9,13 +9,16 @@
 import Foundation
 import UIKit
 
-class MenuViewController : UICollectionViewController, UICollectionViewDelegateFlowLayout {
+class MenuViewController : UICollectionViewController {
     
     private var viewModel: MenuViewModel!
     
     override func awakeFromNib() {
         super.awakeFromNib()
         self.viewModel = VltramarineFactory.makeMenuViewModel()
+        self.navigationItem.title = "Photo feeds"
+        self.navigationItem.backBarButtonItem = UIBarButtonItem(title: "", style: .done, target: nil, action: nil)
+        self.navigationItem.backBarButtonItem?.tintColor = vltrmnDarkGrayColor
     }
     
     // MARK: UICollectionViewDataSource
@@ -37,24 +40,13 @@ class MenuViewController : UICollectionViewController, UICollectionViewDelegateF
     override func collectionView(_ collectionView: UICollectionView, willDisplay cell: UICollectionViewCell, forItemAt indexPath: IndexPath) {
         let menuCell = cell as! MenuCollectionViewCell
         menuCell.titleLabel.text = self.viewModel.items[indexPath.row].title
-        menuCell.view.layer.borderWidth = 2.0
     }
     
     override func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         let feedViewController = VltramarineFactory.makeFeedViewController()
-        feedViewController.setContextWith(feed: Feed(feedTheme: self.viewModel.items[indexPath.row].feedTheme))
+        let selectedItem = self.viewModel.items[indexPath.row]
+        feedViewController.setContextWith(feed: Feed(feedTheme: selectedItem.feedTheme), screenTitle: selectedItem.title)
         self.navigationController?.pushViewController(feedViewController, animated: true)
     }
-    
-    //-------------------------------------------------------------------------
-    
-    // MARK: UICollectionViewDelegateFlowLayout
-    
-    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        
-        let itemsCount = self.viewModel.items.count
-        let rowsNumber = CGFloat(itemsCount / 2 + itemsCount % 2)
-        
-        return CGSize(width: self.collectionView!.frame.width/2, height: self.collectionView!.frame.height/rowsNumber)
-    }
+
 }

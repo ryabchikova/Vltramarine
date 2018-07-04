@@ -19,8 +19,9 @@ class FeedViewController : UIViewController, UITableViewDataSource, UITableViewD
     
     @IBOutlet var tableView: UITableView!
     
-    func setContextWith(feed: Feed) {
+    func setContextWith(feed: Feed, screenTitle: String) {
         self.feed = feed
+        self.navigationItem.title = screenTitle
     }
     
     override func viewDidLoad() {

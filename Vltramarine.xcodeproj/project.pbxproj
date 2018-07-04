@@ -12,6 +12,7 @@
 		4274F36F20EB785F00D76E4F /* ObjectFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4274F36E20EB785F00D76E4F /* ObjectFactory.swift */; };
 		4274F38B20EBBC2400D76E4F /* VltramarineTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4274F38A20EBBC2400D76E4F /* VltramarineTests.swift */; };
 		4274F39320EBBD1F00D76E4F /* FeedXmlParserTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4274F39220EBBD1F00D76E4F /* FeedXmlParserTests.swift */; };
+		4274F39520ECA86800D76E4F /* VltramarineColorsAndFonts.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4274F39420ECA86800D76E4F /* VltramarineColorsAndFonts.swift */; };
 		427A441F20E8D61700FFE7DF /* PhotoRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 427A441E20E8D61700FFE7DF /* PhotoRepository.swift */; };
 		427A442120E8D64500FFE7DF /* PhotoRepositorySQLiteImpl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 427A442020E8D64500FFE7DF /* PhotoRepositorySQLiteImpl.swift */; };
 		427A442520E94CCC00FFE7DF /* VltramarineError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 427A442420E94CCC00FFE7DF /* VltramarineError.swift */; };
@@ -55,6 +56,7 @@
 		4274F38A20EBBC2400D76E4F /* VltramarineTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VltramarineTests.swift; sourceTree = "<group>"; };
 		4274F38C20EBBC2400D76E4F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		4274F39220EBBD1F00D76E4F /* FeedXmlParserTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FeedXmlParserTests.swift; sourceTree = "<group>"; };
+		4274F39420ECA86800D76E4F /* VltramarineColorsAndFonts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VltramarineColorsAndFonts.swift; sourceTree = "<group>"; };
 		427A441E20E8D61700FFE7DF /* PhotoRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoRepository.swift; sourceTree = "<group>"; };
 		427A442020E8D64500FFE7DF /* PhotoRepositorySQLiteImpl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoRepositorySQLiteImpl.swift; sourceTree = "<group>"; };
 		427A442420E94CCC00FFE7DF /* VltramarineError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VltramarineError.swift; sourceTree = "<group>"; };
@@ -122,6 +124,7 @@
 			isa = PBXGroup;
 			children = (
 				427A442420E94CCC00FFE7DF /* VltramarineError.swift */,
+				4274F39420ECA86800D76E4F /* VltramarineColorsAndFonts.swift */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -397,6 +400,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				427A442520E94CCC00FFE7DF /* VltramarineError.swift in Sources */,
+				4274F39520ECA86800D76E4F /* VltramarineColorsAndFonts.swift in Sources */,
 				427A441F20E8D61700FFE7DF /* PhotoRepository.swift in Sources */,
 				42C184AD20E3AE9A0024B2F5 /* PhotoServiceImpl.swift in Sources */,
 				4274F36D20EB757900D76E4F /* VltramarineFactory.swift in Sources */,

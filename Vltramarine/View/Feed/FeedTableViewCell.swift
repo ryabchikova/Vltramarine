@@ -12,6 +12,7 @@ import UIKit
 class FeedTableViewCell : UITableViewCell {
     
     @IBOutlet var feedImage: UIImageView!
+    @IBOutlet var imageContainerView: UIView!
     @IBOutlet var pubDateLabel: UILabel!
     @IBOutlet var addToFavoritesButton: UIButton!
     
@@ -21,6 +22,17 @@ class FeedTableViewCell : UITableViewCell {
         didSet {
             self.addToFavoritesButton.isSelected = isFavorite
         }
+    }
+    
+    override func awakeFromNib() {
+        super.awakeFromNib()
+        
+        self.pubDateLabel.textColor = vltrmnDarkGrayColor
+        self.pubDateLabel.font = vltrmnDetailFont
+        self.imageContainerView.layer.cornerRadius = 10.0
+        self.imageContainerView.layer.borderWidth = 0.7
+        self.imageContainerView.layer.borderColor = vltrmnLightGrayColor.cgColor
+        
     }
     
     @IBAction func addToFavoritesAction(_ sender: Any) {

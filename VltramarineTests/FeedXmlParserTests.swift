@@ -39,10 +39,8 @@ class FeedXmlParserTests: XCTestCase {
     }
     
     func testParserPerformance() {
-        // This is an example of a performance test case.
         self.measure {
             self.xmlParser!.getAllPhotosFrom(feedUrl: Feed(feedTheme: .graffiti).url)
-            
         }
     }
     

@@ -11,6 +11,17 @@ import UIKit
 
 class MenuCollectionViewCell : UICollectionViewCell {
     
-    @IBOutlet var view: UIView!
     @IBOutlet var titleLabel: UILabel!
+    @IBOutlet var containerView: UIView!
+    
+    override func awakeFromNib() {
+        super.awakeFromNib()
+        
+        self.containerView.layer.cornerRadius = 10.0
+        self.containerView.backgroundColor = vltrmnLightGrayColor
+        self.titleLabel.textColor = vltrmnDarkGrayColor
+        self.titleLabel.font = vltrmnMenuItemFont
+    }
+
+
 }
