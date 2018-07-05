@@ -20,10 +20,10 @@ class FeedXMLParser: NSObject, XMLParserDelegate {
 
     func getAllPhotosFrom(feedUrl: String) throws -> [Photo] {
         guard let url = URL(string: feedUrl) else {
-            throw NSError(domain: kFeedXmlParserErrorDomain, code: FeedXmlParserErrorCode.invalidDocumentUrl.rawValue, userInfo:  [NSLocalizedDescriptionKey: "Document URL sent to xml-parser is invalid"])
+            throw NSError(domain: kFeedXmlParserErrorDomain, code: FeedXmlParserErrorCode.invalidDocumentUrl.rawValue, userInfo:  [NSLocalizedDescriptionKey: "Bad url: '\(feedUrl)'"])
         }
         guard let xmlParser = XMLParser(contentsOf: url) else {
-            throw NSError(domain: kFeedXmlParserErrorDomain, code: FeedXmlParserErrorCode.invalidDocumentUrl.rawValue, userInfo:  [NSLocalizedDescriptionKey: "Document URL sent to xml-parser is invalid"])
+            throw NSError(domain: kFeedXmlParserErrorDomain, code: FeedXmlParserErrorCode.invalidDocumentUrl.rawValue, userInfo:  [NSLocalizedDescriptionKey: "Bad url: '\(url)'"])
         }
         xmlParser.delegate = self
         

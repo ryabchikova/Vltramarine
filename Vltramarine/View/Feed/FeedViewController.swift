@@ -52,9 +52,16 @@ class FeedViewController : UIViewController, UITableViewDataSource, UITableViewD
             self.items = feedItems
             self.tableView.reloadData()
         }.catch { error in
-            // TODO show error page
-            NSLog(error.localizedDescription)
+            let error = error as NSError
+            NSLog("Fetching feed data failed. Error domain: %@ code: %d description: %@", error.domain, error.code, error.localizedDescription)
+            self.showFetchErrorAlert(message: error.localizedDescription)
         }
+    }
+    
+    private func showFetchErrorAlert(message: String) {
+        let alertController = UIAlertController(title: "Loading data error", message: message, preferredStyle: .alert)
+        alertController.addAction(UIAlertAction(title: "Ok", style: .default, handler: nil))
+        self.present(alertController, animated: true, completion: nil)
     }
     
     // MARK: UITableViewDataSource
@@ -80,6 +87,8 @@ class FeedViewController : UIViewController, UITableViewDataSource, UITableViewD
         
         return cell
     }
+    
+    // MARK: UITableViewDelegate
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let fullScreenPhotoViewController = VltramarineFactory.makeFullScreenPhotoViewController()

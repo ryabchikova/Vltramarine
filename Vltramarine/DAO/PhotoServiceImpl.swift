@@ -21,6 +21,8 @@ class PhotoServiceImpl: PhotoService {
                     self.repository.getPhotosFor(feedTheme: .favorites)
                 }.done { photos in
                     seal.fulfill(photos)
+                }.catch { error in
+                    seal.reject(error)
                 }
             }
         }
