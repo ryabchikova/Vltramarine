@@ -25,7 +25,7 @@
                             <size key="footerReferenceSize" width="0.0" height="0.0"/>
                             <inset key="sectionInset" minX="20" minY="20" maxX="20" maxY="20"/>
                         </collectionViewFlowLayout>
-                        <imageView key="backgroundView" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="menuBackground3" id="pAV-Rh-i7x">
+                        <imageView key="backgroundView" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="menuBackground" id="pAV-Rh-i7x">
                             <rect key="frame" x="0.0" y="-64" width="375" height="667"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         </imageView>
@@ -47,7 +47,7 @@
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                             </subviews>
-                                            <color key="backgroundColor" red="0.8784313725490196" green="0.87789404392242432" blue="0.87789404392242432" alpha="0.7481003852739726" colorSpace="calibratedRGB"/>
+                                            <color key="backgroundColor" red="0.8784313725490196" green="0.87789404392242432" blue="0.87789404392242432" alpha="0.75" colorSpace="calibratedRGB"/>
                                             <constraints>
                                                 <constraint firstAttribute="trailing" secondItem="bQp-YP-2PU" secondAttribute="trailing" id="ATm-FF-mAx"/>
                                                 <constraint firstItem="bQp-YP-2PU" firstAttribute="top" secondItem="cgV-GO-bvM" secondAttribute="top" id="ELW-1q-rz6"/>
@@ -233,6 +233,6 @@
     <resources>
         <image name="addToFavorites" width="19" height="18"/>
         <image name="addedToFavorites" width="19" height="18"/>
-        <image name="menuBackground3" width="297" height="530"/>
+        <image name="menuBackground" width="1250" height="1350"/>
     </resources>
 </document>

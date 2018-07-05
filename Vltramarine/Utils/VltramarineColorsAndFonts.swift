@@ -18,7 +18,7 @@ fileprivate let rgbOpaque: (Int, Int, Int) -> UIColor = {
 }
 
 let vltrmnDarkGrayColor = rgb(61, 65, 80, 0.7)
-let vltrmnLightGrayColor = rgb(224, 224, 224, 0.85)
+let vltrmnLightGrayColor = rgb(224, 224, 224, 0.9)
 let vltrmnWhiteColor = rgbOpaque(255, 255, 255)
 
 // Fonts
