@@ -1,1 +1,3 @@
-While access control is a very welcome addition with many benefits, it can complicate unit testing, especialy if you are new to unit testing.
+While access control is a very welcome addition with many benefits, it can complicate unit testing, especially if you are new to unit testing. You probably know that you can apply the testable attribute to an import statement in a test target to gain access to entities that are declared as internal.
+While this is a convenient addition, it doesn't give you access to private entities in a test target. This brings us to the question of the day. How do you unit test private entities?
+The short answer to this question is simple. You cannot access private entities from another module and this also applies to test targets. Plain and simple. That is what access control is for.

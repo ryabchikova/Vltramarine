@@ -23,6 +23,8 @@ class FeedXmlParserTests: XCTestCase {
         self.xmlParser = nil
     }
     
+    // MARK: Bad url
+    
     func testBadUrlProcess() {
         XCTAssertThrowsError(try self.xmlParser!.getAllPhotosFrom(feedUrl: "www.is a bad url.ru")) { error in
             let error = error as NSError
@@ -39,6 +41,8 @@ class FeedXmlParserTests: XCTestCase {
         }
     }
 
+    // MARK: invalid xlm document
+    
     func testInvalidXmlDocumentParse() {
         let testFeedUrl = Bundle(for: type(of: self)).url(forResource: "invalidTestFeed", withExtension: "xml", subdirectory: nil)
         XCTAssertNotNil(testFeedUrl)
@@ -56,7 +60,38 @@ class FeedXmlParserTests: XCTestCase {
         XCTAssertNoThrow(result = try self.xmlParser!.getAllPhotosFrom(feedUrl: testFeedUrl!.absoluteString))
         XCTAssert(result.isEmpty)
     }
+    
+    // MARK: invalid xml fields format
+    
+    func testXmlDocumentWithBadDescriptionFormat() {
+        let testFeedUrl = Bundle(for: type(of: self)).url(forResource: "testFeedWithBadDescriptionFormat", withExtension: "xml", subdirectory: nil)
+        XCTAssertNotNil(testFeedUrl)
+        
+        var result = [Photo]()
+        XCTAssertNoThrow(result = try self.xmlParser!.getAllPhotosFrom(feedUrl: testFeedUrl!.absoluteString))
+        XCTAssert(result.isEmpty)
+    }
+    
+    func testXmlDocumentWithBadUrlFormat() {
+        let testFeedUrl = Bundle(for: type(of: self)).url(forResource: "testFeedWithBadUrlFormat", withExtension: "xml", subdirectory: nil)
+        XCTAssertNotNil(testFeedUrl)
+        
+        var result = [Photo]()
+        XCTAssertNoThrow(result = try self.xmlParser!.getAllPhotosFrom(feedUrl: testFeedUrl!.absoluteString))
+        XCTAssert(result.isEmpty)
+    }
+    
+    func testXmlDocumentWithBadDateFormat() {
+        let testFeedUrl = Bundle(for: type(of: self)).url(forResource: "testFeedWithBadDateFormat", withExtension: "xml", subdirectory: nil)
+        XCTAssertNotNil(testFeedUrl)
+        
+        var result = [Photo]()
+        XCTAssertNoThrow(result = try self.xmlParser!.getAllPhotosFrom(feedUrl: testFeedUrl!.absoluteString))
+        XCTAssert(result.isEmpty)
+    }
 
+    // MARK: correct xml
+    
     func testCorrectXmlDocumentParse() {
         let testFeedUrl = Bundle(for: type(of: self)).url(forResource: "correctTestFeed", withExtension: "xml", subdirectory: nil)
         XCTAssertNotNil(testFeedUrl)
@@ -87,6 +122,8 @@ class FeedXmlParserTests: XCTestCase {
         XCTAssert(formatter.string(from: photo3.publicationDate) == "28 Sep 2017 at 18:31")
         XCTAssert(photo3.isFavorite == false)
     }
+    
+    // MARK: performance
     
     func testParserPerformance() {
         self.measure {
