@@ -13,9 +13,6 @@ class VltramarineFactory: ObjectFactory {
 
     static func makeMenuViewModel() -> MenuViewModel {
         return MenuViewModel()
-        
-        // another variant
-        //return MenuViewModel(menuItems: [MenuItem(feedTheme: .art, title: "Art"), MenuItem(feedTheme: .urban, title: "Urban")])
     }
     
     static func makeFeedViewController() -> FeedViewController {
@@ -25,6 +22,11 @@ class VltramarineFactory: ObjectFactory {
         return feedViewController
     }
     
+    static func makeFullScreenPhotoViewController() -> FullScreenPhotoViewController {
+        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+        return storyboard.instantiateViewController(withIdentifier: "FullScreenPhotoViewController") as! FullScreenPhotoViewController
+    }
+    
     static func makePhotoService() -> PhotoService {
         let photoService = PhotoServiceImpl()
         photoService.repository = makePhotoRepository()
@@ -32,12 +34,7 @@ class VltramarineFactory: ObjectFactory {
     }
     
     static func makePhotoRepository() -> PhotoRepository {
-        return PhotoRepositorySQLiteImpl()
+        let docPaths = NSSearchPathForDirectoriesInDomains(FileManager.SearchPathDirectory.documentDirectory, FileManager.SearchPathDomainMask.userDomainMask, true)
+        return PhotoRepositorySQLiteImpl(dataBasePath: (docPaths[0] as NSString).appendingPathComponent("Vltramarine.sqlite") as String)
     }
-    
-    static func makeFullScreenPhotoViewController() -> FullScreenPhotoViewController {
-        let storyboard = UIStoryboard(name: "Main", bundle: nil)
-        return storyboard.instantiateViewController(withIdentifier: "FullScreenPhotoViewController") as! FullScreenPhotoViewController
-    }
-
 }

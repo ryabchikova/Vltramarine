@@ -173,7 +173,7 @@
                     </tableView>
                     <connections>
                         <outlet property="tableView" destination="jZt-2H-iyS" id="luG-ZY-Nkv"/>
-                        <segue destination="LgU-nt-E0S" kind="presentation" id="5KC-Od-VPs"/>
+                        <segue destination="LgU-nt-E0S" kind="presentation" identifier="toFullScreenPhotoViewControllerSegue" id="5KC-Od-VPs"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="V8C-Jp-31y" userLabel="First Responder" sceneMemberID="firstResponder"/>

@@ -7,14 +7,14 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		4241B0781F9C70614D4864F3 /* Pods_Vltramarine.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4274F38220EBA60000D76E4F /* Pods_Vltramarine.framework */; };
+		3B3EF6648C462A24163DB6F1 /* Pods_Vltramarine.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4274F38220EBA60000D76E4F /* Pods_Vltramarine.framework */; };
 		42424E3920ED818600F3D20D /* simpleTextFile.txt in Resources */ = {isa = PBXBuildFile; fileRef = 42424E3820ED818600F3D20D /* simpleTextFile.txt */; };
 		4246D25320EDDE9700CC946B /* testFeedWithBadDescriptionFormat.xml in Resources */ = {isa = PBXBuildFile; fileRef = 4246D25220EDDE9700CC946B /* testFeedWithBadDescriptionFormat.xml */; };
 		4246D25520EDE18A00CC946B /* testFeedWithBadUrlFormat.xml in Resources */ = {isa = PBXBuildFile; fileRef = 4246D25420EDE18A00CC946B /* testFeedWithBadUrlFormat.xml */; };
 		4246D25720EDE3AC00CC946B /* testFeedWithBadDateFormat.xml in Resources */ = {isa = PBXBuildFile; fileRef = 4246D25620EDE3AC00CC946B /* testFeedWithBadDateFormat.xml */; };
+		4246D25920EE004300CC946B /* PhotoRepositoryTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4246D25820EE004300CC946B /* PhotoRepositoryTests.swift */; };
 		4274F36D20EB757900D76E4F /* VltramarineFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4274F36C20EB757900D76E4F /* VltramarineFactory.swift */; };
 		4274F36F20EB785F00D76E4F /* ObjectFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4274F36E20EB785F00D76E4F /* ObjectFactory.swift */; };
-		4274F38B20EBBC2400D76E4F /* VltramarineTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4274F38A20EBBC2400D76E4F /* VltramarineTests.swift */; };
 		4274F39320EBBD1F00D76E4F /* FeedXmlParserTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4274F39220EBBD1F00D76E4F /* FeedXmlParserTests.swift */; };
 		4274F39520ECA86800D76E4F /* VltramarineColorsAndFonts.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4274F39420ECA86800D76E4F /* VltramarineColorsAndFonts.swift */; };
 		4274F39720ECEE8D00D76E4F /* FullScreenPhotoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4274F39620ECEE8D00D76E4F /* FullScreenPhotoViewController.swift */; };
@@ -40,6 +40,7 @@
 		42C184AD20E3AE9A0024B2F5 /* PhotoServiceImpl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42C184AC20E3AE9A0024B2F5 /* PhotoServiceImpl.swift */; };
 		42C184AF20E419E40024B2F5 /* FeedXmlParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42C184AE20E419E40024B2F5 /* FeedXmlParser.swift */; };
 		886A088E3B6AA74F8C5ECF80 /* Pods_Vltramarine.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 79048D12DFAC846E49658D39 /* Pods_Vltramarine.framework */; };
+		EFE476440856305F0AC47B0E /* Pods_VltramarineTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E6BE3423455D091B4DDD7616 /* Pods_VltramarineTests.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -55,16 +56,17 @@
 /* Begin PBXFileReference section */
 		26091F07493B18C4C7AD3664 /* Pods-Vltramarine.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Vltramarine.release.xcconfig"; path = "Pods/Target Support Files/Pods-Vltramarine/Pods-Vltramarine.release.xcconfig"; sourceTree = "<group>"; };
 		292F71E25763117DE6CC9D7E /* Pods-Vltramarine.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Vltramarine.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Vltramarine/Pods-Vltramarine.debug.xcconfig"; sourceTree = "<group>"; };
+		3E7507BA2A7042A97C9AB4DF /* Pods-VltramarineTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-VltramarineTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-VltramarineTests/Pods-VltramarineTests.debug.xcconfig"; sourceTree = "<group>"; };
 		42424E3820ED818600F3D20D /* simpleTextFile.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = simpleTextFile.txt; sourceTree = "<group>"; };
 		4246D25220EDDE9700CC946B /* testFeedWithBadDescriptionFormat.xml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = testFeedWithBadDescriptionFormat.xml; sourceTree = "<group>"; };
 		4246D25420EDE18A00CC946B /* testFeedWithBadUrlFormat.xml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = testFeedWithBadUrlFormat.xml; sourceTree = "<group>"; };
 		4246D25620EDE3AC00CC946B /* testFeedWithBadDateFormat.xml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = testFeedWithBadDateFormat.xml; sourceTree = "<group>"; };
+		4246D25820EE004300CC946B /* PhotoRepositoryTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoRepositoryTests.swift; sourceTree = "<group>"; };
 		4274F36C20EB757900D76E4F /* VltramarineFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VltramarineFactory.swift; sourceTree = "<group>"; };
 		4274F36E20EB785F00D76E4F /* ObjectFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ObjectFactory.swift; sourceTree = "<group>"; };
 		4274F38020EBA51400D76E4F /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Platforms/iPhoneOS.platform/Developer/Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
 		4274F38220EBA60000D76E4F /* Pods_Vltramarine.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Pods_Vltramarine.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		4274F38820EBBC2400D76E4F /* VltramarineTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = VltramarineTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		4274F38A20EBBC2400D76E4F /* VltramarineTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VltramarineTests.swift; sourceTree = "<group>"; };
 		4274F38C20EBBC2400D76E4F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		4274F39220EBBD1F00D76E4F /* FeedXmlParserTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FeedXmlParserTests.swift; sourceTree = "<group>"; };
 		4274F39420ECA86800D76E4F /* VltramarineColorsAndFonts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VltramarineColorsAndFonts.swift; sourceTree = "<group>"; };
@@ -93,6 +95,8 @@
 		42C184AC20E3AE9A0024B2F5 /* PhotoServiceImpl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoServiceImpl.swift; sourceTree = "<group>"; };
 		42C184AE20E419E40024B2F5 /* FeedXmlParser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FeedXmlParser.swift; sourceTree = "<group>"; };
 		79048D12DFAC846E49658D39 /* Pods_Vltramarine.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Vltramarine.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		8E24C2100E756508DE8797F0 /* Pods-VltramarineTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-VltramarineTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-VltramarineTests/Pods-VltramarineTests.release.xcconfig"; sourceTree = "<group>"; };
+		E6BE3423455D091B4DDD7616 /* Pods_VltramarineTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_VltramarineTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -100,6 +104,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EFE476440856305F0AC47B0E /* Pods_VltramarineTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -108,13 +113,27 @@
 			buildActionMask = 2147483647;
 			files = (
 				886A088E3B6AA74F8C5ECF80 /* Pods_Vltramarine.framework in Frameworks */,
-				4241B0781F9C70614D4864F3 /* Pods_Vltramarine.framework in Frameworks */,
+				3B3EF6648C462A24163DB6F1 /* Pods_Vltramarine.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		42031FB920EE2B3B0005FDFA /* FeedXmlParserTests */ = {
+			isa = PBXGroup;
+			children = (
+				4246D25620EDE3AC00CC946B /* testFeedWithBadDateFormat.xml */,
+				4246D25220EDDE9700CC946B /* testFeedWithBadDescriptionFormat.xml */,
+				4246D25420EDE18A00CC946B /* testFeedWithBadUrlFormat.xml */,
+				42424E3820ED818600F3D20D /* simpleTextFile.txt */,
+				4274F3A220ED634200D76E4F /* invalidTestFeed.xml */,
+				4274F3A020ED46DE00D76E4F /* correctTestFeed.xml */,
+				4274F39220EBBD1F00D76E4F /* FeedXmlParserTests.swift */,
+			);
+			path = FeedXmlParserTests;
+			sourceTree = "<group>";
+		};
 		4274F36B20EB753A00D76E4F /* Factory */ = {
 			isa = PBXGroup;
 			children = (
@@ -127,14 +146,8 @@
 		4274F38920EBBC2400D76E4F /* VltramarineTests */ = {
 			isa = PBXGroup;
 			children = (
-				4246D25620EDE3AC00CC946B /* testFeedWithBadDateFormat.xml */,
-				4246D25220EDDE9700CC946B /* testFeedWithBadDescriptionFormat.xml */,
-				4246D25420EDE18A00CC946B /* testFeedWithBadUrlFormat.xml */,
-				42424E3820ED818600F3D20D /* simpleTextFile.txt */,
-				4274F3A220ED634200D76E4F /* invalidTestFeed.xml */,
-				4274F3A020ED46DE00D76E4F /* correctTestFeed.xml */,
-				4274F39220EBBD1F00D76E4F /* FeedXmlParserTests.swift */,
-				4274F38A20EBBC2400D76E4F /* VltramarineTests.swift */,
+				42031FB920EE2B3B0005FDFA /* FeedXmlParserTests */,
+				4246D25820EE004300CC946B /* PhotoRepositoryTests.swift */,
 				4274F38C20EBBC2400D76E4F /* Info.plist */,
 			);
 			path = VltramarineTests;
@@ -259,6 +272,8 @@
 			children = (
 				292F71E25763117DE6CC9D7E /* Pods-Vltramarine.debug.xcconfig */,
 				26091F07493B18C4C7AD3664 /* Pods-Vltramarine.release.xcconfig */,
+				3E7507BA2A7042A97C9AB4DF /* Pods-VltramarineTests.debug.xcconfig */,
+				8E24C2100E756508DE8797F0 /* Pods-VltramarineTests.release.xcconfig */,
 			);
 			name = Pods;
 			sourceTree = "<group>";
@@ -269,6 +284,7 @@
 				4274F38220EBA60000D76E4F /* Pods_Vltramarine.framework */,
 				4274F38020EBA51400D76E4F /* XCTest.framework */,
 				79048D12DFAC846E49658D39 /* Pods_Vltramarine.framework */,
+				E6BE3423455D091B4DDD7616 /* Pods_VltramarineTests.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -280,9 +296,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 4274F38F20EBBC2400D76E4F /* Build configuration list for PBXNativeTarget "VltramarineTests" */;
 			buildPhases = (
+				B9A7F52DF81B7C2FC55CD143 /* [CP] Check Pods Manifest.lock */,
 				4274F38420EBBC2400D76E4F /* Sources */,
 				4274F38520EBBC2400D76E4F /* Frameworks */,
 				4274F38620EBBC2400D76E4F /* Resources */,
+				83D2D716F2A0CE7B067315EA /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -378,6 +396,46 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
+		83D2D716F2A0CE7B067315EA /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-VltramarineTests/Pods-VltramarineTests-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/FMDB/FMDB.framework",
+				"${BUILT_PRODUCTS_DIR}/PromiseKit/PromiseKit.framework",
+				"${BUILT_PRODUCTS_DIR}/SDWebImage/SDWebImage.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FMDB.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/PromiseKit.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SDWebImage.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-VltramarineTests/Pods-VltramarineTests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		B9A7F52DF81B7C2FC55CD143 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-VltramarineTests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
 		DD35C5CFE2BFF095185ACA32 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -425,8 +483,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4246D25920EE004300CC946B /* PhotoRepositoryTests.swift in Sources */,
 				4274F39320EBBD1F00D76E4F /* FeedXmlParserTests.swift in Sources */,
-				4274F38B20EBBC2400D76E4F /* VltramarineTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -489,6 +547,7 @@
 /* Begin XCBuildConfiguration section */
 		4274F39020EBBC2400D76E4F /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 3E7507BA2A7042A97C9AB4DF /* Pods-VltramarineTests.debug.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
@@ -509,6 +568,7 @@
 		};
 		4274F39120EBBC2400D76E4F /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 8E24C2100E756508DE8797F0 /* Pods-VltramarineTests.release.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;

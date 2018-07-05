@@ -16,4 +16,6 @@ protocol PhotoRepository {
     func getPhotosFor(feedTheme: FeedTheme) -> Guarantee<[Photo]>
  
     func setFavoriteStateForPhotoWith(identifier: Int, isFavorite: Bool) -> Guarantee<Bool>
+    
+    func deleteAllPhotos() -> Guarantee<Bool>
 }

@@ -7,5 +7,9 @@ target 'Vltramarine' do
   pod 'PromiseKit'
   pod 'SDWebImage'
   pod 'FMDB'
+  
+  target 'VltramarineTests' do
+      inherit! :search_paths
+  end
 
 end

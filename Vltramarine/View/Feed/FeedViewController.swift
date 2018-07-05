@@ -31,7 +31,7 @@ class FeedViewController : UIViewController, UITableViewDataSource, UITableViewD
         self.tableView.delegate = self
         self.tableView.tableFooterView = UIView()
         
-        // TODO copipaste!!!
+        // TODO copypaste!!!
         self.navigationItem.backBarButtonItem = UIBarButtonItem(title: "", style: .done, target: nil, action: nil)
         self.navigationItem.backBarButtonItem?.tintColor = vltrmnDarkGrayColor
     }

@@ -52,7 +52,7 @@ class PhotoServiceImpl: PhotoService {
                 do {
                     let photos = try FeedXMLParser().getAllPhotosFrom(feedUrl: feed.url)
                     seal.fulfill(photos)
-                } catch { error
+                } catch {
                     seal.reject(error)
                 }
             }

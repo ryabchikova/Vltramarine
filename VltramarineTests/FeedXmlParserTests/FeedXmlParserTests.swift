@@ -19,8 +19,8 @@ class FeedXmlParserTests: XCTestCase {
     }
     
     override func tearDown() {
-        super.tearDown()
         self.xmlParser = nil
+        super.tearDown()
     }
     
     // MARK: Bad url
@@ -129,7 +129,7 @@ class FeedXmlParserTests: XCTestCase {
         self.measure {
             let testFeedUrl = Bundle(for: type(of: self)).url(forResource: "correctTestFeed", withExtension: "xml", subdirectory: nil)
             XCTAssertNotNil(testFeedUrl)
-            try! self.xmlParser!.getAllPhotosFrom(feedUrl: testFeedUrl!.absoluteString)
+            _ = try! self.xmlParser!.getAllPhotosFrom(feedUrl: testFeedUrl!.absoluteString)
         }
     }
 }

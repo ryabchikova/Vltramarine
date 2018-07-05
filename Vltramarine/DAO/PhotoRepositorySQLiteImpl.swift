@@ -12,10 +12,16 @@ import FMDB
 
 class PhotoRepositorySQLiteImpl: PhotoRepository {
     
+    private let dbPath: String
     private var queue: FMDatabaseQueue!
     
-    init() {
-        self.queue = FMDatabaseQueue(path: self.dbPath())
+    init(dataBasePath: String) {
+        guard !dataBasePath.isEmpty else {
+            fatalError("Setup database failed. Error: database file name is empty.")
+        }
+        
+        self.dbPath = dataBasePath
+        self.queue = FMDatabaseQueue(path: dataBasePath)
         self.queue.inDatabase { db in
             let query = """
                 CREATE TABLE IF NOT EXISTS Photo (
@@ -23,22 +29,19 @@ class PhotoRepositorySQLiteImpl: PhotoRepository {
                     url TEXT,
                     publicationDate INTEGER,
                     feedTheme INTEGER,
-                    isFavorite INTEGER DEFAULT 0);
+                    isFavorite INTEGER DEFAULT 0)
             """
             if !db.executeUpdate(query, withArgumentsIn: []) {
-                fatalError("Setup database Vltramarine.sqlite failed. Error: \(db.lastErrorMessage())")
+                fatalError("Setup database \(dbPath) failed. Error: \(db.lastErrorMessage())")
             }
         }
-    }
-    
-    private func dbPath() -> String {
-        let docPaths = NSSearchPathForDirectoriesInDomains(FileManager.SearchPathDirectory.documentDirectory, FileManager.SearchPathDomainMask.userDomainMask, true)
-        return (docPaths[0] as NSString).appendingPathComponent("Vltramarine.sqlite") as String
     }
     
     // MARK: Data processing
     
     func savePhotosFor(feedTheme: FeedTheme, photos: [Photo]) -> Promise<Void> {
+        guard !photos.isEmpty else { return Promise { $0.fulfill(()) } }
+        
         return Promise { seal in
             DispatchQueue.global(qos: .userInitiated).async {
                 var transactionFailed = false
@@ -51,7 +54,7 @@ class PhotoRepositorySQLiteImpl: PhotoRepository {
                             "feedTheme": feedTheme.rawValue
                         ]
                         
-                        let success = db.executeUpdate("INSERT OR IGNORE INTO Photo (identifier, url, publicationDate, feedTheme) VALUES (:identifier, :url, :publicationDate, :feedTheme);", withParameterDictionary: paramsDictionary)
+                        let success = db.executeUpdate("INSERT OR IGNORE INTO Photo (identifier, url, publicationDate, feedTheme) VALUES (:identifier, :url, :publicationDate, :feedTheme)", withParameterDictionary: paramsDictionary)
                         
                         if !success {
                             transactionFailed = true
@@ -78,9 +81,9 @@ class PhotoRepositorySQLiteImpl: PhotoRepository {
                 var query = ""
                 switch feedTheme {
                 case .favorites:
-                    query = "SELECT * FROM Photo WHERE isFavorite = 1 ORDER BY publicationDate DESC;"
+                    query = "SELECT * FROM Photo WHERE isFavorite = 1 ORDER BY publicationDate DESC"
                 default:
-                    query = "SELECT * FROM Photo WHERE feedTheme = \(feedTheme.rawValue) ORDER BY publicationDate DESC;"
+                    query = "SELECT * FROM Photo WHERE feedTheme = \(feedTheme.rawValue) ORDER BY publicationDate DESC"
                 }
                 
                 self.queue.inDatabase { db in
@@ -107,6 +110,16 @@ class PhotoRepositorySQLiteImpl: PhotoRepository {
                 self.queue.inDatabase { db in
                     seal(db.executeUpdate("UPDATE Photo SET isFavorite = ? WHERE identifier = ?",
                                                   withArgumentsIn: [(isFavorite ? 1 : 0), identifier]))
+                }
+            }
+        }
+    }
+    
+    func deleteAllPhotos() -> Guarantee<Bool> {
+        return Guarantee { seal in
+            DispatchQueue.global(qos: .userInitiated).async {
+                self.queue.inDatabase { db in
+                    seal(db.executeUpdate("DELETE FROM Photo", withArgumentsIn: []))
                 }
             }
         }
