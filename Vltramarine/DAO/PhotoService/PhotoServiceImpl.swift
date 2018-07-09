@@ -11,7 +11,11 @@ import PromiseKit
 
 class PhotoServiceImpl: PhotoService {
     
-    var repository: PhotoRepository!
+    private let repository: PhotoRepository
+    
+    init(repository: PhotoRepository) {
+        self.repository = repository
+    }
     
     func getAllPhotosFrom(feed: Feed) -> Promise<[Photo]> {
         

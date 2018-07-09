@@ -19,7 +19,7 @@ enum FeedTheme: Int {
 }
 
 // TODO feed's url place to constants or some config
-class Feed: NSObject {
+struct Feed {
     
     let theme: FeedTheme
     let url: String

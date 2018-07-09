@@ -7,32 +7,13 @@
 //
 
 import XCTest
-@testable import Vltramarine
 import PromiseKit
-
-
-/*
- 
- What i am tests:
- 
- protocol PhotoRepository {
- 
- func savePhotosFor(feedTheme: FeedTheme, photos: [Photo]) -> Promise<Void>
- 
- func getPhotosFor(feedTheme: FeedTheme) -> Guarantee<[Photo]>
- 
- func setFavoriteStateForPhotoWith(identifier: Int, isFavorite: Bool) -> Guarantee<Bool>
- }
- 
- 
- */
-
-
-
+@testable import Vltramarine
 
 class PhotoRepositoryTests: XCTestCase {
-    
+
     var photoRepository: PhotoRepository?
+    var databaseProvider: DatabaseProvider?
     
     let twoInputPhoto = [
         Photo(identifier: 1, url: URL(string: "http://www.vltramarine.ru/image1.jpg")!, publicationDate: Date(timeIntervalSince1970: 1000)),
@@ -41,13 +22,18 @@ class PhotoRepositoryTests: XCTestCase {
     
     override func setUp() {
         super.setUp()
+        
+        let configuration = getConfiguration(fromPlist: "TestConfiguration", in: Bundle(for: type(of: self)))
+        let dbFileName = (configuration["database_file_name"]  as? String) ?? ""
+        XCTAssertFalse(dbFileName.isEmpty)
         let docPaths = NSSearchPathForDirectoriesInDomains(FileManager.SearchPathDirectory.documentDirectory, FileManager.SearchPathDomainMask.userDomainMask, true)
-        let dbPath = (docPaths[0] as NSString).appendingPathComponent("TestDatabase.sqlite") as String
-        self.photoRepository = PhotoRepositorySQLiteImpl(dataBasePath: dbPath)
+        self.databaseProvider = DatabaseProvider(dataBasePath: (docPaths[0] as NSString).appendingPathComponent(dbFileName) as String)
+        self.photoRepository = PhotoRepositorySQLiteImpl(databaseProvider: databaseProvider!)
     }
     
     override func tearDown() {
         self.photoRepository = nil
+        self.databaseProvider = nil
         super.tearDown()
     }
     

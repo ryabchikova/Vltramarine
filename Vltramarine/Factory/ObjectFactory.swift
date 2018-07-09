@@ -8,11 +8,18 @@
 
 import Foundation
 
+// TODO не нужен
 protocol ObjectFactory {
+    
+    static var configuration: [String: Any] {get}
     
     static func makeMenuViewModel() -> MenuViewModel
     
     static func makeFeedViewController() -> FeedViewController
+    
+    static func makeFullScreenPhotoViewController() -> FullScreenPhotoViewController
+    
+    static func makeDatabaseProvider() -> DatabaseProvider
     
     static func makePhotoService() -> PhotoService
     

@@ -12,32 +12,15 @@ import FMDB
 
 class PhotoRepositorySQLiteImpl: PhotoRepository {
     
-    private let dbPath: String
-    private var queue: FMDatabaseQueue!
+    private let databaseProvider: DatabaseProvider
     
-    init(dataBasePath: String) {
-        guard !dataBasePath.isEmpty else {
-            fatalError("Setup database failed. Error: database file name is empty.")
-        }
-        
-        self.dbPath = dataBasePath
-        self.queue = FMDatabaseQueue(path: dataBasePath)
-        self.queue.inDatabase { db in
-            let query = """
-                CREATE TABLE IF NOT EXISTS Photo (
-                    identifier INTEGER PRIMARY KEY,
-                    url TEXT,
-                    publicationDate INTEGER,
-                    feedTheme INTEGER,
-                    isFavorite INTEGER DEFAULT 0)
-            """
-            if !db.executeUpdate(query, withArgumentsIn: []) {
-                fatalError("Setup database \(dbPath) failed. Error: \(db.lastErrorMessage())")
-            }
-        }
+    init(databaseProvider: DatabaseProvider) {
+        self.databaseProvider = databaseProvider
     }
     
-    // MARK: Data processing
+    private var queue: FMDatabaseQueue {
+        return self.databaseProvider.queue
+    }
     
     func savePhotosFor(feedTheme: FeedTheme, photos: [Photo]) -> Promise<Void> {
         guard !photos.isEmpty else { return Promise { $0.fulfill(()) } }

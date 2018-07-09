@@ -8,7 +8,7 @@
 
 import Foundation
 
-class Photo: NSObject {
+struct Photo {
     
     let identifier: Int
     let url: URL
