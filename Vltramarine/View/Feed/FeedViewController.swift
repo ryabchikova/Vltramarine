@@ -34,10 +34,7 @@ class FeedViewController : UIViewController, UITableViewDataSource, UITableViewD
         // TODO copypaste!!!
         self.navigationItem.backBarButtonItem = UIBarButtonItem(title: "", style: .done, target: nil, action: nil)
         self.navigationItem.backBarButtonItem?.tintColor = vltrmnDarkGrayColor
-    }
-    
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(true)
+        
         self.fetchData()
     }
     
