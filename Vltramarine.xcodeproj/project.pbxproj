@@ -738,15 +738,17 @@
 			baseConfigurationReference = 292F71E25763117DE6CC9D7E /* Pods-Vltramarine.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = HYC2DXWEX7;
+				DEVELOPMENT_TEAM = 3U7F8477YU;
 				INFOPLIST_FILE = Vltramarine/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.ryabchikova.Vltramarine;
+				PRODUCT_BUNDLE_IDENTIFIER = com.eryabchikova.Vltramarine;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -757,15 +759,17 @@
 			baseConfigurationReference = 26091F07493B18C4C7AD3664 /* Pods-Vltramarine.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = HYC2DXWEX7;
+				DEVELOPMENT_TEAM = 3U7F8477YU;
 				INFOPLIST_FILE = Vltramarine/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.ryabchikova.Vltramarine;
+				PRODUCT_BUNDLE_IDENTIFIER = com.eryabchikova.Vltramarine;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
