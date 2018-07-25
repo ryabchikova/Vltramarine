@@ -10,7 +10,7 @@ import Foundation
 
 class FeedXMLParser: NSObject, XMLParserDelegate {
     
-    private var photosArray = [Photo]()
+    private var photosArray = [PhotoXmlData]()
     
     private var currentElementName = ""
     private var currentElementText = ""
@@ -18,7 +18,7 @@ class FeedXMLParser: NSObject, XMLParserDelegate {
     private var currentDescription = ""
     private var currentPubDate = ""
 
-    func getAllPhotosFrom(feedUrl: String) throws -> [Photo] {
+    func getAllPhotosFrom(feedUrl: String) throws -> [PhotoXmlData] {
         guard let url = URL(string: feedUrl) else {
             throw NSError(domain: kFeedXmlParserErrorDomain, code: FeedXmlParserErrorCode.invalidDocumentUrl.rawValue, userInfo:  [NSLocalizedDescriptionKey: "Bad url: '\(feedUrl)'"])
         }
@@ -62,7 +62,7 @@ class FeedXMLParser: NSObject, XMLParserDelegate {
             let fetchedDate = self.fetchDateFrom(self.currentPubDate)
             
             if let url = fetchedUrl, let identifier = fetchedIdentifier, let date = fetchedDate {
-                self.photosArray.append(Photo(identifier: identifier, url: url, publicationDate: date))
+                self.photosArray.append(PhotoXmlData(identifier: identifier, url: url, publicationDate: date))
             }
         }
     }

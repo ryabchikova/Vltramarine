@@ -8,7 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		3B3EF6648C462A24163DB6F1 /* Pods_Vltramarine.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4274F38220EBA60000D76E4F /* Pods_Vltramarine.framework */; };
-		42031FBE20F2529B0005FDFA /* DatabaseProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42031FBD20F2529B0005FDFA /* DatabaseProvider.swift */; };
 		42031FC220F34AEF0005FDFA /* Configuration.plist in Resources */ = {isa = PBXBuildFile; fileRef = 42031FC120F34AEF0005FDFA /* Configuration.plist */; };
 		42031FC420F35D260005FDFA /* VltramarineConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42031FC320F35D260005FDFA /* VltramarineConfiguration.swift */; };
 		42031FCA20F381780005FDFA /* TestConfiguration.plist in Resources */ = {isa = PBXBuildFile; fileRef = 42031FC920F381780005FDFA /* TestConfiguration.plist */; };
@@ -25,8 +24,11 @@
 		4274F3A120ED46DE00D76E4F /* correctTestFeed.xml in Resources */ = {isa = PBXBuildFile; fileRef = 4274F3A020ED46DE00D76E4F /* correctTestFeed.xml */; };
 		4274F3A320ED634300D76E4F /* invalidTestFeed.xml in Resources */ = {isa = PBXBuildFile; fileRef = 4274F3A220ED634200D76E4F /* invalidTestFeed.xml */; };
 		427A441F20E8D61700FFE7DF /* PhotoRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 427A441E20E8D61700FFE7DF /* PhotoRepository.swift */; };
-		427A442120E8D64500FFE7DF /* PhotoRepositorySQLiteImpl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 427A442020E8D64500FFE7DF /* PhotoRepositorySQLiteImpl.swift */; };
 		427A442520E94CCC00FFE7DF /* VltramarineError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 427A442420E94CCC00FFE7DF /* VltramarineError.swift */; };
+		427ADC45210880670028BA32 /* VltramarineModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 427ADC43210880670028BA32 /* VltramarineModel.xcdatamodeld */; };
+		427ADC4C210881C60028BA32 /* Photo+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 427ADC4A210881C60028BA32 /* Photo+CoreDataClass.swift */; };
+		427ADC4D210881C60028BA32 /* Photo+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 427ADC4B210881C60028BA32 /* Photo+CoreDataProperties.swift */; };
+		427ADC4F21088C7A0028BA32 /* PhotoRepositoryCoredataImpl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 427ADC4E21088C7A0028BA32 /* PhotoRepositoryCoredataImpl.swift */; };
 		42A807C020EA7184001D304A /* FeedTableViewCellDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42A807BF20EA7183001D304A /* FeedTableViewCellDelegate.swift */; };
 		42AFF2D320EAE23200E51D3A /* PhotoViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42AFF2D220EAE23200E51D3A /* PhotoViewModel.swift */; };
 		42C1848220E2FC2D0024B2F5 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42C1848120E2FC2D0024B2F5 /* AppDelegate.swift */; };
@@ -39,7 +41,7 @@
 		42C184A120E369420024B2F5 /* MenuCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42C184A020E369420024B2F5 /* MenuCollectionViewCell.swift */; };
 		42C184A420E387150024B2F5 /* FeedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42C184A320E387150024B2F5 /* FeedViewController.swift */; };
 		42C184A620E389150024B2F5 /* FeedTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42C184A520E389150024B2F5 /* FeedTableViewCell.swift */; };
-		42C184A920E39FB30024B2F5 /* Photo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42C184A820E39FB30024B2F5 /* Photo.swift */; };
+		42C184A920E39FB30024B2F5 /* PhotoXmlData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42C184A820E39FB30024B2F5 /* PhotoXmlData.swift */; };
 		42C184AB20E3A9680024B2F5 /* PhotoService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42C184AA20E3A9680024B2F5 /* PhotoService.swift */; };
 		42C184AD20E3AE9A0024B2F5 /* PhotoServiceImpl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42C184AC20E3AE9A0024B2F5 /* PhotoServiceImpl.swift */; };
 		42C184AF20E419E40024B2F5 /* FeedXmlParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42C184AE20E419E40024B2F5 /* FeedXmlParser.swift */; };
@@ -61,7 +63,6 @@
 		26091F07493B18C4C7AD3664 /* Pods-Vltramarine.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Vltramarine.release.xcconfig"; path = "Pods/Target Support Files/Pods-Vltramarine/Pods-Vltramarine.release.xcconfig"; sourceTree = "<group>"; };
 		292F71E25763117DE6CC9D7E /* Pods-Vltramarine.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Vltramarine.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Vltramarine/Pods-Vltramarine.debug.xcconfig"; sourceTree = "<group>"; };
 		3E7507BA2A7042A97C9AB4DF /* Pods-VltramarineTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-VltramarineTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-VltramarineTests/Pods-VltramarineTests.debug.xcconfig"; sourceTree = "<group>"; };
-		42031FBD20F2529B0005FDFA /* DatabaseProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DatabaseProvider.swift; sourceTree = "<group>"; };
 		42031FC120F34AEF0005FDFA /* Configuration.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Configuration.plist; sourceTree = "<group>"; };
 		42031FC320F35D260005FDFA /* VltramarineConfiguration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VltramarineConfiguration.swift; sourceTree = "<group>"; };
 		42031FC920F381780005FDFA /* TestConfiguration.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = TestConfiguration.plist; sourceTree = "<group>"; };
@@ -82,8 +83,11 @@
 		4274F3A020ED46DE00D76E4F /* correctTestFeed.xml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = correctTestFeed.xml; sourceTree = "<group>"; };
 		4274F3A220ED634200D76E4F /* invalidTestFeed.xml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = invalidTestFeed.xml; sourceTree = "<group>"; };
 		427A441E20E8D61700FFE7DF /* PhotoRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoRepository.swift; sourceTree = "<group>"; };
-		427A442020E8D64500FFE7DF /* PhotoRepositorySQLiteImpl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoRepositorySQLiteImpl.swift; sourceTree = "<group>"; };
 		427A442420E94CCC00FFE7DF /* VltramarineError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VltramarineError.swift; sourceTree = "<group>"; };
+		427ADC44210880670028BA32 /* VltramarineModel.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = VltramarineModel.xcdatamodel; sourceTree = "<group>"; };
+		427ADC4A210881C60028BA32 /* Photo+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Photo+CoreDataClass.swift"; sourceTree = "<group>"; };
+		427ADC4B210881C60028BA32 /* Photo+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Photo+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		427ADC4E21088C7A0028BA32 /* PhotoRepositoryCoredataImpl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoRepositoryCoredataImpl.swift; sourceTree = "<group>"; };
 		42A807BF20EA7183001D304A /* FeedTableViewCellDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedTableViewCellDelegate.swift; sourceTree = "<group>"; };
 		42AFF2D220EAE23200E51D3A /* PhotoViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoViewModel.swift; sourceTree = "<group>"; };
 		42C1847E20E2FC2D0024B2F5 /* Vltramarine.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Vltramarine.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -98,7 +102,7 @@
 		42C184A020E369420024B2F5 /* MenuCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuCollectionViewCell.swift; sourceTree = "<group>"; };
 		42C184A320E387150024B2F5 /* FeedViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedViewController.swift; sourceTree = "<group>"; };
 		42C184A520E389150024B2F5 /* FeedTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedTableViewCell.swift; sourceTree = "<group>"; };
-		42C184A820E39FB30024B2F5 /* Photo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Photo.swift; sourceTree = "<group>"; };
+		42C184A820E39FB30024B2F5 /* PhotoXmlData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoXmlData.swift; sourceTree = "<group>"; };
 		42C184AA20E3A9680024B2F5 /* PhotoService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoService.swift; sourceTree = "<group>"; };
 		42C184AC20E3AE9A0024B2F5 /* PhotoServiceImpl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoServiceImpl.swift; sourceTree = "<group>"; };
 		42C184AE20E419E40024B2F5 /* FeedXmlParser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FeedXmlParser.swift; sourceTree = "<group>"; };
@@ -155,7 +159,7 @@
 			isa = PBXGroup;
 			children = (
 				427A441E20E8D61700FFE7DF /* PhotoRepository.swift */,
-				427A442020E8D64500FFE7DF /* PhotoRepositorySQLiteImpl.swift */,
+				427ADC4E21088C7A0028BA32 /* PhotoRepositoryCoredataImpl.swift */,
 			);
 			path = PhotoRepository;
 			sourceTree = "<group>";
@@ -198,6 +202,16 @@
 			path = Utils;
 			sourceTree = "<group>";
 		};
+		427ADC42210880420028BA32 /* Coredata */ = {
+			isa = PBXGroup;
+			children = (
+				427ADC4A210881C60028BA32 /* Photo+CoreDataClass.swift */,
+				427ADC4B210881C60028BA32 /* Photo+CoreDataProperties.swift */,
+				427ADC43210880670028BA32 /* VltramarineModel.xcdatamodeld */,
+			);
+			path = Coredata;
+			sourceTree = "<group>";
+		};
 		42C1847520E2FC2D0024B2F5 = {
 			isa = PBXGroup;
 			children = (
@@ -221,6 +235,7 @@
 		42C1848020E2FC2D0024B2F5 /* Vltramarine */ = {
 			isa = PBXGroup;
 			children = (
+				427ADC42210880420028BA32 /* Coredata */,
 				42C1848120E2FC2D0024B2F5 /* AppDelegate.swift */,
 				42C1848520E2FC2D0024B2F5 /* Main.storyboard */,
 				42C1848A20E2FC2E0024B2F5 /* LaunchScreen.storyboard */,
@@ -251,7 +266,7 @@
 			isa = PBXGroup;
 			children = (
 				42C1849C20E35EA90024B2F5 /* Feed.swift */,
-				42C184A820E39FB30024B2F5 /* Photo.swift */,
+				42C184A820E39FB30024B2F5 /* PhotoXmlData.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -260,7 +275,6 @@
 			isa = PBXGroup;
 			children = (
 				42C184AE20E419E40024B2F5 /* FeedXmlParser.swift */,
-				42031FBD20F2529B0005FDFA /* DatabaseProvider.swift */,
 				42031FBA20F2510E0005FDFA /* PhotoService */,
 				42031FBB20F251210005FDFA /* PhotoRepository */,
 			);
@@ -499,13 +513,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				427ADC45210880670028BA32 /* VltramarineModel.xcdatamodeld in Sources */,
 				427A442520E94CCC00FFE7DF /* VltramarineError.swift in Sources */,
 				4274F39520ECA86800D76E4F /* VltramarineColorsAndFonts.swift in Sources */,
 				427A441F20E8D61700FFE7DF /* PhotoRepository.swift in Sources */,
-				42031FBE20F2529B0005FDFA /* DatabaseProvider.swift in Sources */,
 				42C184AD20E3AE9A0024B2F5 /* PhotoServiceImpl.swift in Sources */,
 				4274F36D20EB757900D76E4F /* VltramarineFactory.swift in Sources */,
-				427A442120E8D64500FFE7DF /* PhotoRepositorySQLiteImpl.swift in Sources */,
+				427ADC4F21088C7A0028BA32 /* PhotoRepositoryCoredataImpl.swift in Sources */,
 				42C184AF20E419E40024B2F5 /* FeedXmlParser.swift in Sources */,
 				42AFF2D320EAE23200E51D3A /* PhotoViewModel.swift in Sources */,
 				42C1849B20E30AC00024B2F5 /* MenuViewModel.swift in Sources */,
@@ -516,10 +530,12 @@
 				42A807C020EA7184001D304A /* FeedTableViewCellDelegate.swift in Sources */,
 				42C1848220E2FC2D0024B2F5 /* AppDelegate.swift in Sources */,
 				4274F39720ECEE8D00D76E4F /* FullScreenPhotoViewController.swift in Sources */,
+				427ADC4C210881C60028BA32 /* Photo+CoreDataClass.swift in Sources */,
 				4274F36F20EB785F00D76E4F /* ObjectFactory.swift in Sources */,
-				42C184A920E39FB30024B2F5 /* Photo.swift in Sources */,
+				42C184A920E39FB30024B2F5 /* PhotoXmlData.swift in Sources */,
 				42C1849820E305DD0024B2F5 /* MenuViewController.swift in Sources */,
 				42C184A420E387150024B2F5 /* FeedViewController.swift in Sources */,
+				427ADC4D210881C60028BA32 /* Photo+CoreDataProperties.swift in Sources */,
 				42C184A120E369420024B2F5 /* MenuCollectionViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -562,7 +578,11 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = HYC2DXWEX7;
 				INFOPLIST_FILE = VltramarineTests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.ryabchikova.VltramarineTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
@@ -579,7 +599,11 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = HYC2DXWEX7;
 				INFOPLIST_FILE = VltramarineTests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.ryabchikova.VltramarineTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
@@ -639,7 +663,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 9.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
@@ -693,7 +717,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 9.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
 				SWIFT_COMPILATION_MODE = wholemodule;
@@ -711,7 +735,11 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 3U7F8477YU;
 				INFOPLIST_FILE = Vltramarine/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.eryabchikova.Vltramarine;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
@@ -729,7 +757,11 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 3U7F8477YU;
 				INFOPLIST_FILE = Vltramarine/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.eryabchikova.Vltramarine;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
@@ -769,6 +801,19 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		427ADC43210880670028BA32 /* VltramarineModel.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				427ADC44210880670028BA32 /* VltramarineModel.xcdatamodel */,
+			);
+			currentVersion = 427ADC44210880670028BA32 /* VltramarineModel.xcdatamodel */;
+			path = VltramarineModel.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = 42C1847620E2FC2D0024B2F5 /* Project object */;
 }

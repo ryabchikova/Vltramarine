@@ -50,7 +50,7 @@ class PhotoServiceImpl: PhotoService {
         return self.repository.setFavoriteStateForPhotoWith(identifier:identifier, isFavorite:isFavorite)
     }
     
-    private func getPhotosFromRssFor(feed: Feed) -> Promise<[Photo]> {
+    private func getPhotosFromRssFor(feed: Feed) -> Promise<[PhotoXmlData]> {
         return Promise { seal in
             DispatchQueue.global(qos: .userInitiated).async {
                 do {

@@ -8,12 +8,16 @@
 
 import Foundation
 import UIKit
+import CoreData
 
 class VltramarineFactory {
     
-    static private var databaseProvider: DatabaseProvider?     // singleton behavior
+    static private let configuration: [String: Any] = getConfiguration(fromPlist: "Configuration", in: Bundle.main)
     
-    static var configuration: [String: Any] = getConfiguration(fromPlist: "Configuration", in: Bundle.main)
+    static private let managedContext: NSManagedObjectContext = {
+        let appDelegate = UIApplication.shared.delegate  as! AppDelegate
+        return appDelegate.persistentContainer.viewContext
+    }()
     
     // MARK: Viewcontrollers
     
@@ -37,24 +41,8 @@ class VltramarineFactory {
     
     // MARK: DAO
     
-    static func makeDatabaseProvider() -> DatabaseProvider {
-        
-        if let provider = self.databaseProvider { return provider }
-        
-        let dbFileName = (self.configuration["database_file_name"]  as? String) ?? ""
-        if (dbFileName.isEmpty) {
-            fatalError("Confiiguration error: database file name is empty.")
-        }
-        
-        let docPaths = NSSearchPathForDirectoriesInDomains(FileManager.SearchPathDirectory.documentDirectory, FileManager.SearchPathDomainMask.userDomainMask, true)
-        let provider = DatabaseProvider(dataBasePath: (docPaths[0] as NSString).appendingPathComponent(dbFileName) as String)
-        self.databaseProvider = provider
-        return provider
-    }
-    
     static func makePhotoRepository() -> PhotoRepository {
-        let databaseProvider = makeDatabaseProvider()
-        return PhotoRepositorySQLiteImpl(databaseProvider: databaseProvider)
+        return PhotoRepositoryCoredataImpl(managedContext: self.managedContext)
     }
     
     static func makePhotoService() -> PhotoService {

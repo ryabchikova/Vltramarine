@@ -42,7 +42,7 @@ class FeedViewController : UIViewController, UITableViewDataSource, UITableViewD
         firstly {
             self.photoService.getAllPhotosFrom(feed: self.feed)
         }.map { photos -> [PhotoViewModel] in
-            return photos.map { photo in
+            return photos.compactMap { photo in
                 return PhotoViewModel(photo)
             }
         }.done { feedItems in

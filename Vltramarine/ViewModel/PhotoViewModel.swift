@@ -15,10 +15,12 @@ class PhotoViewModel: NSObject {
     let publicationDate: String
     var isFavorite: Bool
     
-    init(_ photo: Photo) {
-        self.identifier = photo.identifier
-        self.url = photo.url
-        self.publicationDate = PhotoViewModel.readableFormatFor(date: photo.publicationDate)
+    init?(_ photo: Photo) {
+        self.identifier = Int(photo.identifier)
+        guard let urlString = photo.url, let url = URL(string: urlString) else { return nil }
+        self.url = url
+        guard let publicationDate = photo.publicationDate else  { return nil }
+        self.publicationDate = PhotoViewModel.readableFormatFor(date: publicationDate as Date)
         self.isFavorite = photo.isFavorite
     }
     

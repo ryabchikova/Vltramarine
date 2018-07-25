@@ -11,9 +11,9 @@ import PromiseKit
 
 protocol PhotoRepository {
     
-    func savePhotosFor(feedTheme: FeedTheme, photos: [Photo]) -> Promise<Void>
+    func savePhotosFor(feedTheme: FeedTheme, photos: [PhotoXmlData]) -> Promise<Void>
     
-    func getPhotosFor(feedTheme: FeedTheme) -> Guarantee<[Photo]>
+    func getPhotosFor(feedTheme: FeedTheme) -> Promise<[Photo]>
  
     func setFavoriteStateForPhotoWith(identifier: Int, isFavorite: Bool) -> Guarantee<Bool>
     

@@ -19,8 +19,6 @@ protocol ObjectFactory {
     
     static func makeFullScreenPhotoViewController() -> FullScreenPhotoViewController
     
-    static func makeDatabaseProvider() -> DatabaseProvider
-    
     static func makePhotoService() -> PhotoService
     
     static func makePhotoRepository() -> PhotoRepository
